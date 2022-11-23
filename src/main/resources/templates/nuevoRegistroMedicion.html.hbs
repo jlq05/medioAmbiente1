@@ -1,0 +1,50 @@
+{{# partial "titulo" }}
+    <title>NuevaMedicion</title>
+{{/partial}}
+<head>
+        <link rel="stylesheet" type="text/css" href="/nuevoRegistroMedicion.css">
+    </head>
+{{# partial "contenido" }}
+
+       
+    
+    <section>
+         <h3 class="header-title">Agregar Medicion</h3>
+    
+        
+        <form class="selector-organizacion" action="/nuevaMedicion" method="POST">
+            <div class="campo">
+            <span style="word-spacing: 1.5em">tipo de consumo:</span><input  type="text" id="nombreComienzaCon"  placeholder="Seleccione tipo consumo" max="25">
+            </div>
+            <div class="campo">
+                <span style="word-spacing: 7.5em">valor :</span><input type="number" id="nombreComienzaCon"  placeholder="Seleccione valor" max="25">
+            </div>
+            <div class="campo">
+                <span style="word-spacing: 5em">periocidad :</span>
+                    <select  style="width:200px">
+
+                    <option>anual</option>
+
+                    <option>mensual</option>
+
+
+
+                </select>
+            </div>
+
+
+
+            <div class="campo">
+                <span>periodo de imputacion: </span><input type="date" id="nombreComienzaCon"  placeholder="Selecione periodo" max="25">
+            </div>
+
+        </form>
+        <div>
+
+            </section>
+            <input type="button"  class="btn-borde-medicion" value="Agregar" autofocus="true" />
+        </div>
+    </section>
+{{/partial}}
+
+{{> layoutAdministrador.html.hbs }}

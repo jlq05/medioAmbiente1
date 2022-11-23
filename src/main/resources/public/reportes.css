@@ -1,0 +1,31 @@
+.header-title {
+    text-align: center;
+    margin: auto;
+    font-size: 1.7em;
+    font-family: 'Roboto', sans-serif;
+    padding-bottom:15px;
+    /*color: #fbfbfb;*/
+  }
+
+
+  .btn-borde-reportes {
+    padding: .375rem .75rem;
+    border: 0.5px solid #014283;
+    /*border-radius: .25rem;*/
+    display: block;
+    border-radius: 6px;
+    color: #014283;
+    transition: color .15s ease-in-out,
+    background-color .15s ease-in-out;
+    background: transparent;
+    align-items: center;
+    width: 500px;
+    
+  
+  }
+
+  .btn-borde-reportes:hover {
+    background-color: #1f7b9c;
+  }
+  
+  

@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    {{# block "titulo" }}
+    {{/block}}
+</head>
+
+<body>
+<header>
+    <div class="section">
+        <a class="item-menu" href="/">Home</a>
+        {{#if ADMINISTRADOR}}
+        <a class="item-menu" href="/organizaciones">Calcular HC</a>
+        <a class="item-menu" href="/solicitudes">Solicitudes</a>
+        <a class="item-menu" href="/reportes">Reportes</a>
+        <a class="item-menu" href="/medicion">Mediciones</a>
+        {{/if}}
+        {{#if USUARIO}}
+        <a class="item-menu" href="/trayecto">Trayecto</a>
+        <a class="item-menu" href="/vinculacion">Vinculaciones</a>
+        <a class="item-menu" href="/recomendaciones">Guia de Recomendaciones</a>
+        {{/if}}
+        {{#if sesionIniciada}}
+            <a class="item-menu" href="/loginUsuarioSinLogueo">Iniciar Sesión</a>
+        {{else}}
+            <form action="/loginUsuarioSinLogueo/logout" method="POST">
+                <input class="item-menu" type="submit" value="Cerrar Sesión">
+            </form>
+        {{/if}}
+    </div>
+</header>
+<main class="wrapper">
+    {{# block "contenido" }}
+    {{/block}}
+</main>
+<footer>
+    <div class="section">UTN FRBA CATEDRA DISEÑO 2022</div>
+    <p align="left">{{ fecha }}</p>
+</footer>
+</body>
+
+</html>

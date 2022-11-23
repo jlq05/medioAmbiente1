@@ -1,0 +1,50 @@
+<title>Solicitudes</title>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/solicitudes.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <div class="section">
+                    <div class="header-title">
+                        Solicitudes
+                    </div>
+                </div>
+            </header>
+            <div class="content">
+                 <div class="section">
+                     <div class="sectores-wrapper">
+                         <div class="sectores-label">
+                              Estas son las solicitudes de vinculación
+                         </div>
+                         <div class="solicitud-list">
+                                <div class="solicitud-title">
+                                    <div class="solicitud-title-field">DNI</div>
+                                    <div class="solicitud-title-field">Nombre y Apellido</div>
+                                    <div class="solicitud-title-field">Sector</div>
+                                    <form>
+                                        <input class="solicitud-button" type="button" style="visibility:hidden" value="V">
+                                        <input class="solicitud-button" type="button" style="visibility:hidden" value="X">
+                                    </form>
+                                </div>
+                                {{#each postulantes}}
+                                    <form class="solicitud" method="POST" action="">
+                                        <input type="hidden" name="organizacionId" value="{{organizacionId}}">
+                                        <input type="hidden" name="id" value="{{id}}">
+                                        <input type="hidden" name="sectorId" value="{{sectorId}}">
+                                        <div class="solicitud-field">{{dni}}</div>
+                                        <div class="solicitud-field">{{nombre}} {{apellido}}</div>
+                                        <div class="solicitud-field">{{sectorNombre}}</div>
+                                        <input class="solicitud-button accept" type="submit" name="aceptar" value="V">
+                                        <input class="solicitud-button reject" type="submit" name="rechazar" value="X">
+                                    </form>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <div class="section">UTN FRBA CATEDRA DISEÑO 2022</div>
+                </footer>
+              </div>
+        </body>

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #ebebebfd;
+  align-items: center;
+  background-image: url(./imagenes/fondo-plantas.webp);
+  background-position: center;
+}
+  
+  
+  
+header, footer, .content{
+  margin: auto;
+  width:100%;
+}
+  
+header .section,footer .section, .content .section{
+  height:100%;
+  width:80%;
+  margin:auto;
+}
+
+header .section, footer .section{
+  width: 100%;
+}
+  
+header, footer {
+  flex: 0 0 70px;
+}
+  
+.content{
+  flex: 1;
+}
+
+header .section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  background-color: #96d635;
+}
+
+.header-title {
+  text-align: center;
+  margin: auto;
+  font-size: 1.7em;
+  font-family: 'Roboto', sans-serif;
+  color: #fbfbfb;
+}
+
+.content .section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchbar {
+  width: 70%;
+  height: 30px;
+  padding-left: 8px;
+  border-radius: 15px;
+  color: black;
+  border-color: black;
+}
+
+footer .section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  background-color: #38383a;
+  color: #fbfbfb;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.login-card {
+  border-radius: 25px;
+  backdrop-filter: invert(70%);
+  width: 450px;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  box-shadow: 7px 9px 21px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 7px 9px 21px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 7px 9px 21px 0px rgba(0,0,0,0.75);
+}
+
+.login-input {
+  width: 70%;
+  height: 30px;
+  padding-left: 20px;
+  border-radius: 15px;
+  color: black;
+}
+
+.login-button {
+  width: 150px;
+  height: 40px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #2596be;
+  border-radius: 10px;
+  font-size: 1em;
+  color: #fbfbfb;
+  border: none;
+  text-decoration: none;
+}
+
+.login-button:hover {
+  background-color: #1f7b9c;
+}
+
