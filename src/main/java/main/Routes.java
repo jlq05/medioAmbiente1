@@ -17,16 +17,8 @@ import spark.debug.DebugScreen;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
 public class Routes {
-
-  public static Routes INSTANCE = new Routes();
-
-  public static Routes getInstance() {
-    return INSTANCE;
-  }
-
   public static void main(String[] args) {
-
-    Spark.staticFileLocation("/path/to/sources");
+    Spark.port(getHerokuAssignedPort());
     System.out.println("Iniciando el servidor...");
     Spark.port(9001);
     Spark.staticFileLocation("/public");
@@ -108,5 +100,11 @@ public class Routes {
 
   }
 
-
+  public static int getHerokuAssignedPort() {
+    ProcessBuilder processBuilder = new ProcessBuilder();
+    if (processBuilder.environment().get("PORT") != null) {
+      return Integer.parseInt(processBuilder.environment().get("PORT"));
+    }
+    return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+  }
 }
