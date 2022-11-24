@@ -35,7 +35,7 @@ public class Routes {
 
     //Parte del login
     HomeController homeController = new HomeController();
-    Spark.get("/", homeController::getHome, engine);
+    Spark.get("/loginUsuarioSinLogueo", homeController::getHome, engine);//ver despues
 
     LoginSinRegistrarseController loginSinRegistrarseController =
         new LoginSinRegistrarseController();
