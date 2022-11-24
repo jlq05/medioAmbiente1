@@ -35,7 +35,7 @@ public class Routes {
 
     //Parte del login
     HomeController homeController = new HomeController();
-    Spark.get("/loginUsuarioSinLogueo", homeController::getHome, engine);//ver despues
+    Spark.get("/", homeController::getHome, engine);//ver despues
 
     LoginSinRegistrarseController loginSinRegistrarseController =
         new LoginSinRegistrarseController();
@@ -90,7 +90,7 @@ public class Routes {
     Spark.before("/public", (request, response) -> {
       if (!request.pathInfo().startsWith("/loginUsuarioSinLogueo")
           && request.session().attribute("user_id") == null) {
-        response.redirect("/");
+        response.redirect("/loginUsuarioSinLogueo");//ver
       }
     });
 
