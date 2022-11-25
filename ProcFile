@@ -1,1 +1,1 @@
-web: java -Dspring.profiles.active=default -Dserver.port=$PORT -jar target/*.war
+web: java -jar target/java-getting-started-1.0.jar
