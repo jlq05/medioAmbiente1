@@ -155,3 +155,23 @@ footer .section{
   border-radius: 5px;
   color: #fbfbfb;
 }
+
+header .section a:link {
+  color: #fbfbfb
+  background-color: green;
+  border: 2px solid #fbfbfb;
+  padding: 10px;
+  margin-left: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+header .section a:visited {
+  color: #fbfbfb
+  background-color: green;
+  border: 2px solid #fbfbfb;
+  padding: 10px;
+  margin-left: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}

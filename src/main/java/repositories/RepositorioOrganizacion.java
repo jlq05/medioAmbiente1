@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Clasificacion;
 import model.Contacto;
-import model.Miembro;
 import model.NotificacionMail;
 import model.Notificador;
 import model.Organizacion;
@@ -18,7 +17,7 @@ public class RepositorioOrganizacion {
   }
 
   private static List<Organizacion> valoresPrueba() {
-    Sector sector = new Sector("Ventas", new ArrayList<Miembro>(), new ArrayList<Miembro>());
+    Sector sector = new Sector("Ventas", new ArrayList<>(), new ArrayList<>());
     Contacto contacto = new Contacto("Pepe", "+5491167097068", "agustin.y@outlook.com");
     List<Contacto> contactos = new ArrayList<Contacto>();
     contactos.add(contacto);
@@ -36,7 +35,7 @@ public class RepositorioOrganizacion {
         contactos,
         new ArrayList<>(),
         notis);
-    List<Organizacion> listOrg = new ArrayList<Organizacion>();
+    List<Organizacion> listOrg = new ArrayList<>();
     listOrg.add(org);
 
     return listOrg;

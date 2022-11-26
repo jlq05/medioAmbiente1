@@ -1,0 +1,49 @@
+{{# partial "titulo" }}
+    <title>Reportes</title>
+{{/partial}}
+<head>
+    <link rel="stylesheet" type="text/css" href="/reportes-tipo-organizacion.css">
+</head>
+
+{{# partial "contenido" }}
+     <section>
+        <h3 class="header-title">Reportes</h3>
+
+        <form class="selector-organizacion" action="/home/reportes" method="POST">
+              <div class="campo">
+                <span >Elija Tipo de Organizacion :</span>
+                <div class="container-tipo">
+                    <div class="tipo-organizacion">
+                        <input type="radio" name="tipoDeOrganizacion" value="ministerio">
+                        <label for="ministerio">Ministerio</label>
+                    </div>
+                    <div class="tipo-organizacion">
+                        <input type="radio" name="tipoDeOrganizacion" value="universidad">
+                        <label for="universidad">Universidad</label>
+                    </div>
+                     <div class="tipo-organizacion">
+                        <input type="radio" name="tipoDeOrganizacion" value="escuela">
+                        <label for="escuela">Escuela</label>
+                    </div>  
+               
+
+                     <div class="tipo-organizacion">
+                        <input type="radio" name="tipoDeOrganizacion" value="sector_primario">
+                        <label for="sector_primario">Sector_primario</label>
+                    </div>
+                     <div class="tipo-organizacion">
+                        <input type="radio" name="tipoDeOrganizacion" value="sector_secundario">
+                        <label for="sector_secundario">sector_secundario</label>
+                    </div>
+
+                </div>
+            </div>
+         
+            <div>
+                <input type="submit"  class="btn-borde-reporte" value="Obtener" />
+            </div>
+        </form>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

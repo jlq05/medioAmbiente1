@@ -1,0 +1,18 @@
+{{# partial "titulo" }}
+    <title>Tramo</title>
+{{/partial}}
+
+{{# partial "contenido" }}
+    <section>
+        <div>
+           <a class="q-mr-sm opcion-input" href="/">
+             <input type="button" class="btn-borde" value="Finalizar trayecto" />
+           </a>
+           <a class="q-mr-sm opcion-input" href="/home/sector/{{sectorId}}/trayecto/{{trayectoId}}/tramo/nuevo">
+             <input type="button" class="btn-borde" value="Agregar siguiente tramo" />
+           </a>
+        </div>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

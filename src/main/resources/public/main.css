@@ -223,11 +223,27 @@ header, footer {
     width: 80%;
     height: 100%;
     padding: 10px;
+}
 
+.q-mr-sm {
+    margin-left: 10px;
+}
+
+.opcion-input {
+    text-decoration: auto;
 }
 
 .item-menu2 {
     color: #19327a;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.container-tipo {
+    color: #161616;
+    display: inline-flex;
+}
+
+.text-center {
+    text-align: center;
 }

@@ -4,14 +4,10 @@ import model.*;
 import org.junit.jupiter.api.*;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.test.AbstractPersistenceTest;
-
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-
-import static org.apache.commons.io.FileUtils.getFile;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mock;
 
@@ -107,10 +103,12 @@ public class TestRepositorySectorTerritorial extends AbstractPersistenceTest imp
 
   private Miembro unMiembro(ArrayList<Trayecto> trayectos){
     Miembro miembro = new Miembro(
-        "Test",
-        "Apellido",
-        TipoDocumento.DNI,
-        11222333,
+        new Persona(
+            "Test",
+            "Apellido",
+            TipoDocumento.DNI,
+            11222333
+        ),
         new ArrayList<Trayecto>()//trayectos
     );
     entityManager().persist(miembro);

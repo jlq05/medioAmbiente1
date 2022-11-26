@@ -1,0 +1,37 @@
+{{# partial "titulo" }}
+    <title>Nuevo trayecto</title>
+{{/partial}}
+
+{{# partial "contenido" }}
+    <section>
+        <div>
+            Tramos del trayecto
+            <div>
+                Periodicidad de imputación
+                <label>{{periodicidadDeImputacion}}</label>
+            </div>
+            <section class="seccion-trayecto" style="border: ridge #141414 1px;">
+                <table style="text-align:center;">
+                    <tr class="row-tr">
+                        <td>Id</td>
+                        <td>Origen</td>
+                        <td>Destino</td>
+                        <td>Medio de transporte</td>
+                        <td>Consumo de combustible</td>
+                    </tr>
+                    {{#each tramos}}
+                        <tr class="row-tr">
+                            <td>{{id}}</td>
+                            <td>{{origen}}</td>
+                            <td>{{destino}}</td>
+                            <td>{{medioDeTransporte}}</td>
+                            <td>{{consumoDeCombustible}}</td>
+                        </tr>
+                    {{/each}}
+                </table>
+           </section>
+        </div>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

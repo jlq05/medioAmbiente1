@@ -1,0 +1,30 @@
+{{# partial "titulo" }}
+    <title>Reportes</title>
+{{/partial}}
+<head>
+    <link rel="stylesheet" type="text/css" href="/reportesSectorTerritorial.css">
+</head>
+
+{{# partial "contenido" }}
+     <section>
+        Organizaciones
+        <form class="selector-organizacion" action="/home/reportes/hc-composicion-organizacion" method="POST">
+            <div class="campo">
+                Elija organizacion
+                <div class="container-tipo">
+                    {{#each organizaciones}}
+                        <div class="tipo-st">
+                            <input type="radio" id="{{id}}" name="organizacion" value="{{id}}">
+                            <label for="{{id}}">{{nombre}}</label>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div>
+                <input type="submit"  class="btn-borde-reporte" value="Obtener" />
+            </div>
+        </form>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

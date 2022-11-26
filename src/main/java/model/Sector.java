@@ -1,5 +1,6 @@
 package model;
 
+import domain.services.distancia.ServicioDistancia;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -51,8 +52,8 @@ public class Sector extends PersistentEntity {
     return miembros.size();
   }
 
-  public float obtenerIndicador() {
-    return obtenerCalculoHC() / cantidadDeMiembros();
+  public float obtenerIndicador(ServicioDistancia servicioDistancia) {
+    return obtenerCalculoHC(servicioDistancia) / cantidadDeMiembros();
   }
 
   public String getNombre() {
@@ -67,9 +68,9 @@ public class Sector extends PersistentEntity {
         .collect(Collectors.toList());
   }
     
-  public float obtenerCalculoHC() {
+  public float obtenerCalculoHC(ServicioDistancia servicioDistancia) {
     return this.obtenerTrayectos().stream()
-        .map(trayecto -> trayecto.obtenerCalculoHC())
+        .map(trayecto -> trayecto.obtenerCalculoHC(servicioDistancia))
         .reduce(0f, (hc, otroHC) -> hc + otroHC);
   }
 

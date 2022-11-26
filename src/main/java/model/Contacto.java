@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "contacto")
+@Table(name = "contactos")
 public class Contacto extends PersistentEntity {
   @Column
   String nombre;

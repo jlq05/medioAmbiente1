@@ -1,5 +1,6 @@
 package model;
 
+import domain.services.distancia.ServicioDistancia;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,11 +44,16 @@ public class SectorTerritorial extends PersistentEntity {
 
   public float obtenerCalculoHC(
       TipoPeriodicidad tipoPeriodicidad,
-      YearMonth periodicidadDeImputacion
+      YearMonth periodicidadDeImputacion,
+      ServicioDistancia servicioDistancia
   ) {
     return (float) this.organizaciones.stream()
         .mapToDouble(organizacion ->
-            organizacion.obtenerCalculoHC(tipoPeriodicidad, periodicidadDeImputacion)
+            organizacion.obtenerCalculoHC(
+                tipoPeriodicidad,
+                periodicidadDeImputacion,
+                servicioDistancia
+            )
         ).sum();
   }
 

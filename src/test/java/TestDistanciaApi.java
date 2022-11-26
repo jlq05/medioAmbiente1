@@ -2,6 +2,7 @@ import domain.services.distancia.entities.Ubicacion;
 import model.Bicicleta;
 import model.Tramo;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,7 +12,7 @@ import domain.services.distancia.ServicioDistancia;
 import static org.mockito.Mockito.*;
 
 public class TestDistanciaApi {
-  //console.log
+
   private ServicioDistancia servicioDistancia;
 
   @BeforeEach
@@ -31,17 +32,18 @@ public class TestDistanciaApi {
     assertEquals(respuesta, 2F);
   }
 
+  @Disabled
   @Test
   public void verificarServicio() throws IOException {
     Tramo tramo = new Tramo(ubicacionMaipu(), ubicacionHiggins(), new Bicicleta(ServicioDistancia.getInstancia()));
-    assertNotNull(tramo.obtenerDistancia());
+    assertNotNull(tramo.obtenerDistancia(servicioDistancia));
   }
 
   @Test
   public void verificarDistanciaDeTramo() throws IOException {
     when(servicioDistancia.obtenerDistancia(any(), any())).thenReturn(2F);
     Tramo tramo = new Tramo(ubicacionMaipu(), ubicacionHiggins(), new Bicicleta(servicioDistancia));
-    assertEquals(tramo.obtenerDistancia(), 2F);
+    assertEquals(tramo.obtenerDistancia(servicioDistancia), 2F);
   }
 
   private Ubicacion ubicacionMaipu() {

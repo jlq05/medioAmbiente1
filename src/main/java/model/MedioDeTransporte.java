@@ -1,5 +1,6 @@
 package model;
 
+import domain.services.distancia.ServicioDistancia;
 import domain.services.distancia.entities.Ubicacion;
 import java.io.IOException;
 import javax.persistence.Entity;
@@ -13,7 +14,11 @@ public abstract class MedioDeTransporte extends PersistentEntity {
   public MedioDeTransporte() {
   }
 
-  public float obtenerDistancia(Ubicacion origen, Ubicacion destino) throws IOException {
+  public float obtenerDistancia(
+      Ubicacion origen,
+      Ubicacion destino,
+      ServicioDistancia servicioDistancia
+  ) throws IOException {
     return 0;
   }
 
@@ -23,5 +28,9 @@ public abstract class MedioDeTransporte extends PersistentEntity {
 
   public float obtenerFE() {
     return 0;
+  }
+
+  public String getMedioDeTransporte() {
+    return "";
   }
 }

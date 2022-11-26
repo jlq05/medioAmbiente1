@@ -1,33 +1,4 @@
 
-    create table Administrador (
-        id int8 not null,
-        apellido varchar(255),
-        contrasena varchar(255),
-        nombre varchar(255),
-        nombreUsuario varchar(255),
-        primary key (id)
-    )
-
-    create table DatosActividad (
-        id int8 not null,
-        periodicidadDeImputacion date,
-        tipoPeriodicidad int4,
-        valor float4 not null,
-        tipoConsumo_id int8,
-        primary key (id)
-    )
-
-    create table Linea (
-        id int8 not null,
-        primary key (id)
-    )
-
-    create table Linea_Parada (
-        Linea_id int8 not null,
-        paradasVuelta_id int8 not null,
-        paradasIda_id int8 not null
-    )
-
     create table MedioDeTransporte (
         DTYPE varchar(31) not null,
         id int8 not null,
@@ -40,64 +11,108 @@
         primary key (id)
     )
 
-    create table Miembro (
+    create table contactos (
         id int8 not null,
-        apellido varchar(255),
-        documento int4,
+        mail varchar(255),
         nombre varchar(255),
-        tipo int4,
+        telefono varchar(255),
         primary key (id)
     )
 
-    create table Miembro_Trayecto (
-        Miembro_id int8 not null,
+    create table datosActividades (
+        id int8 not null,
+        periodicidadDeImputacion date,
+        tipoPeriodicidad int4,
+        valor float4 not null,
+        tipoConsumo_id int8,
+        organizacionId int8,
+        primary key (id)
+    )
+
+    create table lineas (
+        id int8 not null,
+        primary key (id)
+    )
+
+    create table miembros (
+        id int8 not null,
+        persona_id int8,
+        primary key (id)
+    )
+
+    create table miembros_trayectos (
+        miembros_id int8 not null,
         trayectos_id int8 not null
     )
 
-    create table Organizacion (
+    create table organizaciones (
         id int8 not null,
         clasificacion int4,
         razonSocial varchar(255),
         tipo int4,
-        ubicacionGeografica_localidadId int4,
+        altura int4 not null,
+        calle varchar(255),
+        localidadId int4 not null,
+        sectorTerritorialId int8,
         primary key (id)
     )
 
-    create table Organizacion_DatosActividad (
-        Organizacion_id int8 not null,
-        actividades_id int8 not null
-    )
-
-    create table Organizacion_Sector (
-        Organizacion_id int8 not null,
-        sectores_id int8 not null
-    )
-
-    create table Organizacion_contacto (
-        Organizacion_id int8 not null,
+    create table organizaciones_contactos (
+        organizaciones_id int8 not null,
         contactos_id int8 not null
     )
 
-    create table Parada (
+    create table paradas (
         id int8 not null,
         distanciaProxima float4 not null,
         nombre varchar(255),
-        ubicacion_localidadId int4,
+        altura int4 not null,
+        calle varchar(255),
+        localidadId int4 not null,
+        lineaVueltaId int8,
+        paradasVuelta_ORDER int4,
+        lineaIdaId int8,
+        paradasIda_ORDER int4,
         primary key (id)
     )
 
-    create table Sector (
+    create table personas (
         id int8 not null,
+        apellido varchar(255),
+        contrasenia varchar(255),
+        documento int4,
+        nombre varchar(255),
+        nombreUsuario varchar(255),
+        rol int4,
+        tipo int4,
         primary key (id)
     )
 
-    create table Sector_Miembro (
-        Sector_id int8 not null,
-        postulantes_id int8 not null,
+    create table sectores (
+        id int8 not null,
+        nombre varchar(255),
+        organizacionId int8,
+        primary key (id)
+    )
+
+    create table sectoresTerritoriales (
+        id int8 not null,
+        nombre varchar(255),
+        tipo int4,
+        primary key (id)
+    )
+
+    create table sectores_miembros (
+        sectores_id int8 not null,
         miembros_id int8 not null
     )
 
-    create table TipoConsumo (
+    create table sectores_postulantes (
+        sectores_id int8 not null,
+        postulantes_id int8 not null
+    )
+
+    create table tiposDeConsumo (
         id int8 not null,
         factorEmision float4 not null,
         tipoActividad varchar(255),
@@ -107,185 +122,118 @@
         primary key (id)
     )
 
-    create table Tramo (
+    create table tramos (
         id int8 not null,
-        destino_localidadId int4,
+        destino_altura int4,
+        destino_calle varchar(255),
+        destino_localidad_id int4,
+        origen_altura int4,
+        origen_calle varchar(255),
+        origen_localidad_id int4,
         medioDeTransporte_id int8,
-        origen_localidadId int4,
+        trayectoId int8,
         primary key (id)
     )
 
-    create table Trayecto (
+    create table trayectos (
         id int8 not null,
+        periodicidadDeImputacion bytea,
         primary key (id)
     )
 
-    create table Trayecto_Tramo (
-        Trayecto_id int8 not null,
-        tramos_id int8 not null
-    )
-
-    create table Ubicacion (
-        localidadId int4 not null,
-        altura int4 not null,
-        calle varchar(255),
-        primary key (localidadId)
-    )
-
-    create table contacto (
-        id int8 not null,
-        mail varchar(255),
-        nombre varchar(255),
-        telefono varchar(255),
-        primary key (id)
-    )
-
-    create table sector_territorial (
-        id int8 not null,
-        nombre varchar(255),
-        tipo int4,
-        primary key (id)
-    )
-
-    create table sector_territorial_Organizacion (
-        sector_territorial_id int8 not null,
-        organizaciones_id int8 not null
-    )
-
-    alter table Sector_Miembro 
-        add constraint UK_7ghpx5yb4erwl25d7nmhp7b1r  unique (postulantes_id)
-
-    alter table Sector_Miembro 
-        add constraint UK_pb6wj21q906vka2wgjxdeerxk  unique (miembros_id)
-
-    alter table DatosActividad 
-        add constraint FK_nnxc9dmo64wp5osmyrlirgwlf 
+    alter table MedioDeTransporte 
+        add constraint FK_jfoowo9opu40qhkrqnorb0eh0 
         foreign key (tipoConsumo_id) 
-        references TipoConsumo
+        references tiposDeConsumo
 
-    alter table Linea_Parada 
-        add constraint FK_dgvrxsw6akvywkpfjosibi61o 
-        foreign key (paradasVuelta_id) 
-        references Parada
-
-    alter table Linea_Parada 
-        add constraint FK_hw8xb3tgch4ijo13393h4j1k3 
-        foreign key (Linea_id) 
-        references Linea
-
-    alter table Linea_Parada 
-        add constraint FK_b5x3dgpviabx9951sbq5x4c4i 
-        foreign key (paradasIda_id) 
-        references Parada
-
-    alter table MedioDeTransporte
-        add constraint FK_ike1e0tq79xfbysxuoghb8yt6 
-        foreign key (tipoConsumo_id) 
-        references TipoConsumo
-
-    alter table MedioDeTransporte
-        add constraint FK_odiilgdq7o5ilnkvr576moyl0 
+    alter table MedioDeTransporte 
+        add constraint FK_67i7tups41iif553c3sy1csc2 
         foreign key (lineaDeTransporte_id) 
-        references Linea
+        references lineas
 
-    alter table Miembro_Trayecto 
-        add constraint FK_xhrxvnxm03l0snangdqucrg4 
+    alter table datosActividades 
+        add constraint FK_n4us9knbogvq0h7rb1iutl8ge 
+        foreign key (tipoConsumo_id) 
+        references tiposDeConsumo
+
+    alter table datosActividades 
+        add constraint FK_mwoii94ai7ixdadgl5d99kp8b 
+        foreign key (organizacionId) 
+        references organizaciones
+
+    alter table miembros 
+        add constraint FK_c24c1evh6cmvy6s4gqdq8glwp 
+        foreign key (persona_id) 
+        references personas
+
+    alter table miembros_trayectos 
+        add constraint FK_9yja8hmju2cfpc102snsydkd 
         foreign key (trayectos_id) 
-        references Trayecto
+        references trayectos
 
-    alter table Miembro_Trayecto 
-        add constraint FK_t131kww33qy437i4ok3fh5i2y 
-        foreign key (Miembro_id) 
-        references Miembro
-
-    alter table Organizacion 
-        add constraint FK_nc14in1cax8qvg2sydqidd37 
-        foreign key (ubicacionGeografica_localidadId) 
-        references Ubicacion
-
-    alter table Organizacion_DatosActividad 
-        add constraint FK_s5i8e9vg3m8wa81pj8xqa4d0f 
-        foreign key (actividades_id) 
-        references DatosActividad
-
-    alter table Organizacion_DatosActividad 
-        add constraint FK_npiqjsgesu12ptljyis9yejox 
-        foreign key (Organizacion_id) 
-        references Organizacion
-
-    alter table Organizacion_Sector 
-        add constraint FK_nw0rj4m3gef0us0yow6a12p8a 
-        foreign key (sectores_id) 
-        references Sector
-
-    alter table Organizacion_Sector 
-        add constraint FK_p2ooegjkwau2sm9len55fnxsg 
-        foreign key (Organizacion_id) 
-        references Organizacion
-
-    alter table Organizacion_contacto 
-        add constraint FK_tg5nrctebnsbi55qv5y8tbfw 
-        foreign key (contactos_id) 
-        references contacto
-
-    alter table Organizacion_contacto 
-        add constraint FK_r813erxkpd0cy5m97leqq6vit 
-        foreign key (Organizacion_id) 
-        references Organizacion
-
-    alter table Parada 
-        add constraint FK_4jbx8rc310rn6fruw7giscki2 
-        foreign key (ubicacion_localidadId) 
-        references Ubicacion
-
-    alter table Sector_Miembro 
-        add constraint FK_7ghpx5yb4erwl25d7nmhp7b1r 
-        foreign key (postulantes_id) 
-        references Miembro
-
-    alter table Sector_Miembro 
-        add constraint FK_3rnyllwgufvkqj7iyg1hrd7dt 
-        foreign key (Sector_id) 
-        references Sector
-
-    alter table Sector_Miembro 
-        add constraint FK_pb6wj21q906vka2wgjxdeerxk 
+    alter table miembros_trayectos 
+        add constraint FK_64yvmy0ce9e0sgec2ug3u1noi 
         foreign key (miembros_id) 
-        references Miembro
+        references miembros
 
-    alter table Tramo 
-        add constraint FK_2axg4wa5de58yfvr092miuy0r 
-        foreign key (destino_localidadId) 
-        references Ubicacion
+    alter table organizaciones 
+        add constraint FK_hhwisk56s00wo8sli8atk8oyo 
+        foreign key (sectorTerritorialId) 
+        references sectoresTerritoriales
 
-    alter table Tramo 
-        add constraint FK_hvj6aq4ybsu2d3dbrpj7khbme 
-        foreign key (medioDeTransporte_id) 
-        references MedioTransportev2
+    alter table organizaciones_contactos 
+        add constraint FK_t1p4dm5k87sgreyo0mwj6bxom 
+        foreign key (contactos_id) 
+        references contactos
 
-    alter table Tramo 
-        add constraint FK_hre73xsr1o24urq2ayq5wxctb 
-        foreign key (origen_localidadId) 
-        references Ubicacion
-
-    alter table Trayecto_Tramo 
-        add constraint FK_pf6xn10uc24t3g928rpqvx7wc 
-        foreign key (tramos_id) 
-        references Tramo
-
-    alter table Trayecto_Tramo 
-        add constraint FK_7or3fijwiu4bm0e2chwaa3f2e 
-        foreign key (Trayecto_id) 
-        references Trayecto
-
-    alter table sector_territorial_Organizacion 
-        add constraint FK_46jrb0vjyq4885lf0rprwkxro 
+    alter table organizaciones_contactos 
+        add constraint FK_od8jmoat52tt6iv50exom1k62 
         foreign key (organizaciones_id) 
-        references Organizacion
+        references organizaciones
 
-    alter table sector_territorial_Organizacion 
-        add constraint FK_7ajfoll8u4mu647mdlmkbnp1m 
-        foreign key (sector_territorial_id) 
-        references sector_territorial
+    alter table paradas 
+        add constraint FK_7q6bxl83nq67d2f2c588dhw18 
+        foreign key (lineaVueltaId) 
+        references lineas
+
+    alter table paradas 
+        add constraint FK_3w8okpsqtbntelixbq579hqsv 
+        foreign key (lineaIdaId) 
+        references lineas
+
+    alter table sectores 
+        add constraint FK_ih3rq5f6uhrl3qm1tw2islddn 
+        foreign key (organizacionId) 
+        references organizaciones
+
+    alter table sectores_miembros 
+        add constraint FK_f4a6l7o4s80ajjfrqdpm0okqn 
+        foreign key (miembros_id) 
+        references miembros
+
+    alter table sectores_miembros 
+        add constraint FK_j637oqje0oo3x0bt4e8mjpp75 
+        foreign key (sectores_id) 
+        references sectores
+
+    alter table sectores_postulantes 
+        add constraint FK_a4o1a5juef69iasqps0rb4m4 
+        foreign key (postulantes_id) 
+        references miembros
+
+    alter table sectores_postulantes 
+        add constraint FK_jg1ccn37xxgwyotjmdk1l73d1 
+        foreign key (sectores_id) 
+        references sectores
+
+    alter table tramos 
+        add constraint FK_35wd8ujv1xscpx0mvsh63tsan 
+        foreign key (medioDeTransporte_id) 
+        references MedioDeTransporte
+
+    alter table tramos 
+        add constraint FK_4mxgidtq13bmlbwhifku3u451 
+        foreign key (trayectoId) 
+        references trayectos
 
     create sequence hibernate_sequence

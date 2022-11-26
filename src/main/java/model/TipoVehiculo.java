@@ -1,5 +1,5 @@
 package model;
 
 public enum TipoVehiculo {
-  AUTO, MOTO, MOTOCICLETA, SERVICIOCONTRATADO
+  AUTO, MOTO, CAMIONETA, SERVICIOCONTRATADO
 }

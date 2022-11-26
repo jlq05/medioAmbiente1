@@ -10,6 +10,7 @@ public class CerrarSesionController implements WithGlobalEntityManager, Transact
   public Void cerrarSesion(Request request, Response response) {
     request.session().removeAttribute("user_id");
     request.session().removeAttribute("rol_id");
+    request.session().removeAttribute("organizacion_id");
     request.session(true).invalidate();
     response.redirect("/login");
     return null;

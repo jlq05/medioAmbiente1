@@ -43,18 +43,18 @@ public class TestTrayecto {
     unaLinea.agregarParadaIda(medrano);
     unaLinea.agregarParadaIda(retiro);
 
-    TransportePublico unSubte = new TransportePublico(TipoTransportePublico.SUBTE, unaLinea);
+    TransportePublico unSubte = new TransportePublico(TipoTransportePublico.SUBTE, unaLinea, consumoNafta());
     Tramo tramoEnSubte = new Tramo (higgins.getUbicacion(), retiro.getUbicacion(), unSubte);
     trayecto.agregarTramo(tramoAPie);
     trayecto.agregarTramo(tramoEnSubte);
 
-    assertEquals(trayecto.obtenerDistancia(), 902);
+    assertEquals(trayecto.obtenerDistancia(servicioDistancia), 902);
 
   }
 
   @Test
   public void verificarCreacionTransportePublico() {
-    TransportePublico transportePublico = new TransportePublico(TipoTransportePublico.SUBTE, lineaE());
+    TransportePublico transportePublico = new TransportePublico(TipoTransportePublico.SUBTE, lineaE(), consumoNafta());
     assertEquals(transportePublico.getTipoDeTransportePublico(), TipoTransportePublico.SUBTE);
     assertEquals(transportePublico.getLineaDeTransporte().getParadasIda().size(), 3);
   }
@@ -111,7 +111,7 @@ public class TestTrayecto {
 
   @Test
   public void noEsTrayectoCompartido(){
-    Vehiculo vehiculo = new Vehiculo(TipoVehiculo.MOTOCICLETA, consumoNafta(), true,ServicioDistancia.getInstancia());
+    Vehiculo vehiculo = new Vehiculo(TipoVehiculo.MOTO, consumoNafta(), true,ServicioDistancia.getInstancia());
     assertFalse(vehiculo.esCompartible());
   }
 

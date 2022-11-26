@@ -1,11 +1,14 @@
 package model;
 
+import domain.services.distancia.ServicioDistancia;
 import domain.services.distancia.entities.Ubicacion;
 import java.io.File;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -18,6 +21,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import view.OrganizacionVista;
 
 @Entity
 @Table(name = "organizaciones")
@@ -132,27 +136,33 @@ public class Organizacion extends PersistentEntity {
         .collect(Collectors.toList());
   }
 
-  public float obtenerCalculoHcPorTrayectos() {
+  public float obtenerCalculoHcPorTrayectos(ServicioDistancia servicioDistancia) {
     return this.obtenerTrayectos().stream()
-        .map(trayecto -> trayecto.obtenerCalculoHC())
+        .map(trayecto -> trayecto.obtenerCalculoHC(servicioDistancia))
         .reduce(0f, (hc, otroHC) -> hc + otroHC);
   }
 
-  public float obtenerCalculoHC(TipoPeriodicidad tipoPeriodicidad, YearMonth periodoDeImputacion) {
+  public float obtenerCalculoHC(
+      TipoPeriodicidad tipoPeriodicidad,
+      YearMonth periodoDeImputacion,
+      ServicioDistancia servicioDistancia
+  ) {
     Intervalo intervalo = getIntervalo(tipoPeriodicidad, periodoDeImputacion);
-    return obtenerCalculoHcPorTrayectos() + obtenerCalculoHcPorActividades(intervalo);
+    return obtenerCalculoHcPorTrayectos(servicioDistancia)
+        + obtenerCalculoHcPorActividades(intervalo);
   }
 
   public void cargarConsumos(File archivo) {
-    ProcesadorArchivos procesador = new ProcesadorCsv();
+    ProcesadorCsv procesador = new ProcesadorCsv();
     procesador.procesarArchivo(archivo);
+    //return procesador.get
   }
 
-  public float obtenerResultadoPersonal(Miembro miembro) {
+  public float obtenerResultadoPersonal(Miembro miembro, ServicioDistancia servicioDistancia) {
     /*Devuelve porcentaje*/
     return
-        miembro.obtenerCalculoHC()
-        / obtenerCalculoHcPorTrayectos() * 100;
+        miembro.obtenerCalculoHC(servicioDistancia)
+        / obtenerCalculoHcPorTrayectos(servicioDistancia) * 100;
   }
   
   public void agregarContactos(Contacto contacto) {
@@ -170,14 +180,39 @@ public class Organizacion extends PersistentEntity {
       sector.getPostulantes().forEach(postulante -> {
         postulantes.add(new PostulanteDto(
             postulante.getId(),
-            postulante.getDocumento(),
-            postulante.getNombre(),
-            postulante.getApellido(),
+            postulante.getPersona().getDocumento(),
+            postulante.getPersona().getNombre(),
+            postulante.getPersona().getApellido(),
             sector.getId(),
             sector.getNombre()));
       });
     });
 
     return postulantes;
+  }
+
+  public void setRazonSocial(String razonSocial) {
+    this.razonSocial = razonSocial;
+  }
+
+  public OrganizacionVista convertirAOrganizacionVista(
+      TipoPeriodicidad tipoDePeriodicidad, YearMonth yearMonth
+  ) {
+    Map<Clasificacion, String> diccionarioClasificaciones = new HashMap<>();
+    diccionarioClasificaciones.put(Clasificacion.ESCUELA, "Escuela");
+    diccionarioClasificaciones.put(Clasificacion.MINISTERIO, "Ministerio");
+    diccionarioClasificaciones.put(Clasificacion.SECTOR_PRIMARIO, "Sector Primario");
+    diccionarioClasificaciones.put(Clasificacion.SECTOR_SECUNDARIO, "Sector Secundario");
+    diccionarioClasificaciones.put(Clasificacion.UNIVERSIDAD, "Universidad");
+    OrganizacionVista organizacionVista = new OrganizacionVista();
+    organizacionVista.id = this.id.intValue();
+    organizacionVista.nombre = this.razonSocial;
+    organizacionVista.hc =
+        this.obtenerCalculoHC(
+            tipoDePeriodicidad, yearMonth, ServicioDistancia.getInstancia()
+        );
+    organizacionVista.hclegible = Float.toString(organizacionVista.hc);
+    organizacionVista.clasificacion = diccionarioClasificaciones.get(this.clasificacion);
+    return organizacionVista;
   }
 }
