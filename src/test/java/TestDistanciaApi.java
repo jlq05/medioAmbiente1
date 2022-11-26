@@ -11,7 +11,7 @@ import domain.services.distancia.ServicioDistancia;
 import static org.mockito.Mockito.*;
 
 public class TestDistanciaApi {
-
+  //console.log
   private ServicioDistancia servicioDistancia;
 
   @BeforeEach
