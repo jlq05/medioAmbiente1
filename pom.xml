@@ -111,6 +111,24 @@
       <artifactId>spark-debug-tools</artifactId>
       <version>0.5</version>
     </dependency>
+    <!-- Spark debug -->
+    <dependency>
+      <groupId>com.sparkjava</groupId>
+      <artifactId>spark-debug-tools</artifactId>
+      <version>0.5</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.sparkjava</groupId>
+      <artifactId>spark-template-velocity</artifactId>
+      <version>2.7.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.javassist</groupId>
+      <artifactId>javassist</artifactId>
+      <version>3.22.0-GA</version>
+    </dependency>
 
   </dependencies>
 
@@ -207,16 +225,6 @@
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>3.3.0</version>
-        <configuration>
-          <archive>
-            <manifest>
-              <mainClass>main.Routes</mainClass>
-            </manifest>
-          </archive>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
         <executions>
           <execution>
             <phase>package</phase> <!-- bind to the packaging phase -->
@@ -225,18 +233,28 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>main.Routes</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>com.heroku.sdk</groupId>
           <artifactId>heroku-maven-plugin</artifactId>
-          <version>0.4.4</version>
+          <version>3.0.5</version>
           <configuration>
               <jdkVersion>1.8</jdkVersion>
               <!-- Use your own application name -->
               <appName>tp-medio-ambiente</appName> 
               <processTypes>
                   <!-- You might have to remove the ./ in front   -->
-                  <web>java -jar .\target\ejercicio-1.0-SNAPSHOT-jar-with-dependencies.jar 5432</web>
+                  <web>java -jar target/ejercicio-1.0-SNAPSHOT-jar-with-dependencies.jar</web>
               </processTypes>
           </configuration>
       </plugin>
