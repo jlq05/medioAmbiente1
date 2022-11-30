@@ -1,5 +1,6 @@
 package main;
 
+import enums.Rol;
 import java.util.HashMap;
 import java.util.Map;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
@@ -17,11 +18,9 @@ public class HomeController implements WithGlobalEntityManager, TransactionalOps
     if (!sessionValidator.estaLogueado(request)) {
       response.redirect("/loginUsuarioSinLogueo");
       return null;
-    } else {
-      Map<String, Object> modelo = new HashMap<>();
-      modelo.put("sesionIniciada", request.session().attribute("user_id") != null);
-      return new ModelAndView(modelo, "index.html.hbs");
-
     }
+    Map<String, Object> modelo = new HashMap<>();
+    modelo = new SessionValidator().setearPermisosParaTemplate(modelo, request);
+    return new ModelAndView(modelo, "index.html.hbs");
   }
 }

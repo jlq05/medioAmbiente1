@@ -39,10 +39,10 @@ public class TestOrganizaciones {
   public void verificarCreacionDeUnaPersona() {
     List<Trayecto> trayectos = new ArrayList<Trayecto>();
     Miembro miembro = crearMiembro("Jose", "Pepe", TipoDocumento.DNI, 1111111, trayectos );
-    assertEquals(miembro.getNombre(), "Jose");
-    assertEquals(miembro.getApellido(), "Pepe");
-    assertEquals(miembro.getTipo(), TipoDocumento.DNI);
-    assertEquals(miembro.getDocumento(), 1111111);
+    assertEquals(miembro.getPersona().getNombre(), "Jose");
+    assertEquals(miembro.getPersona().getApellido(), "Pepe");
+    assertEquals(miembro.getPersona().getTipo(), TipoDocumento.DNI);
+    assertEquals(miembro.getPersona().getDocumento(), 1111111);
     assertEquals(miembro.getTrayectos().size(),0);
   }
 
@@ -94,7 +94,9 @@ public class TestOrganizaciones {
         contactos,
         tiposNotificacion);
 
-    assertEquals(organizacion.sectores.get(0).getMiembros().get(0).getNombre(), "Jose");
+    assertEquals(
+        organizacion.sectores.get(0).getMiembros().get(0).getPersona().getNombre(),
+        "Jose");
 
   }
 
@@ -122,7 +124,10 @@ public class TestOrganizaciones {
         contactos,
         tiposNotificacion);
 
-    assertEquals(organizacion.sectores.get(0).getPostulantes().get(0).getNombre(), "Roli");
+    assertEquals(
+        organizacion.sectores.get(0).getPostulantes().get(0).getPersona().getNombre(),
+        "Roli"
+    );
   }
 
   @Test
@@ -176,10 +181,12 @@ public class TestOrganizaciones {
   private Miembro crearMiembro(String nombre, String apellido, TipoDocumento tipo, int documento,List<Trayecto> trayectos) {
 
     Miembro miembro = new Miembro(
-        nombre,
-        apellido,
-        tipo,
-        documento,
+        new Persona(
+            nombre,
+            apellido,
+            tipo,
+            documento
+        ),
         trayectos
     );
     return miembro;

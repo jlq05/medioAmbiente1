@@ -11,15 +11,27 @@ public class SectorTerritorialComposicion {
     this.hc = hc;
   }
 
-  public float getHc() {
-    return hc;
-  }
-
   public String getNombreSector() {
     return nombreSector;
   }
 
+  public void setNombreSector(String nombreSector) {
+    this.nombreSector = nombreSector;
+  }
+
   public String getNombreOrganizacion() {
     return nombreOrganizacion;
+  }
+
+  public void setNombreOrganizacion(String nombreOrganizacion) {
+    this.nombreOrganizacion = nombreOrganizacion;
+  }
+
+  public float getHc() {
+    return hc;
+  }
+
+  public void setHc(float hc) {
+    this.hc = hc;
   }
 }

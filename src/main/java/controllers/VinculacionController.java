@@ -33,7 +33,7 @@ public class VinculacionController implements WithGlobalEntityManager, Transacti
 
     System.out.println(organizacion);
 
-    response.redirect("/" + organizacion.getId() + "/sectores/vinculacion");
+    response.redirect("/home/" + organizacion.getId() + "/sectores/vinculacion");
 
     return null;
   }

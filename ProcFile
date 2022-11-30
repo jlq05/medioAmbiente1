@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 web: java -jar target/java-getting-started-1.0.jar
+=======
+web: java -jar .\target\ejercicio-1.0-SNAPSHOT-jar-with-dependencies.jar 5432
+>>>>>>> 4bf22259873104e7e99ecbe85802745002153b85

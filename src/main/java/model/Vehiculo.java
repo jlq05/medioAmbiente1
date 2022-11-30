@@ -32,6 +32,11 @@ public class Vehiculo extends MedioDeTransporte {
   private Vehiculo() {
   }
 
+  @Override
+  public String getMedioDeTransporte() {
+    return "Vehiculo";
+  }
+
   public Vehiculo(TipoVehiculo tipoDeVehiculo,
                   TipoConsumo tipoConsumo, boolean esPrivado, ServicioDistancia servicio) {
     this.tipoDeVehiculo = tipoDeVehiculo;
@@ -57,8 +62,13 @@ public class Vehiculo extends MedioDeTransporte {
   }
 
   @Override
-  public float obtenerDistancia(Ubicacion origen, Ubicacion destino) throws IOException {
-    return ServicioDistancia.getInstancia().obtenerDistancia(origen, destino);
+  public float obtenerDistancia(
+      Ubicacion origen,
+      Ubicacion destino,
+      ServicioDistancia servicio
+  ) throws IOException {
+
+    return servicio.obtenerDistancia(origen, destino);
   }
 
   @Override

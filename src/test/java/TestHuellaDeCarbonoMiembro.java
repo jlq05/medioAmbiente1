@@ -37,7 +37,10 @@ public class TestHuellaDeCarbonoMiembro {
     unTrayecto.agregarTramo(unTramo);
     unTrayecto.agregarTramo(unTramo);
 
-    Miembro unMiembro = new Miembro("pepe", "lopez", TipoDocumento.DNI, 34839128, new ArrayList<>());
+    Miembro unMiembro = new Miembro(
+        new Persona("pepe", "lopez", TipoDocumento.DNI, 34839128),
+        new ArrayList<>()
+    );
     unMiembro.agregarTrayecto(unTrayecto);
 
     //assertEquals(unMiembro.obtenerCalculoHC(), 100);

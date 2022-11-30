@@ -1,0 +1,29 @@
+{{# partial "titulo" }}
+    <title>ArchivoMediciones</title>
+{{/partial}}
+<head>
+    <link rel="stylesheet" type="text/css" href="/nuevoRegistroMedicion.css">
+</head>
+
+{{# partial "contenido" }}
+     <section>
+        <h3 class="header-title">Nuevo Archivo Medicion</h3>
+
+        <form class="selector-organizacion" action="/home/medicion" method="POST" enctype="multipart/form-data">
+          
+      
+           
+            <div>
+                  <label for="validation">Ingrese CSSV con datos de actividad</label>
+                  <br>
+                  <br>
+                   <input type="file" id="archivoParaSubir" name="archivoParaSubir" />
+               
+            </div>
+             <input type="submit"  class="btn-borde-medicion" value="Subir archivo" name="submit" />
+            
+        </form>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

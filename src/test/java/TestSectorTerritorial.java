@@ -83,10 +83,12 @@ public class TestSectorTerritorial {
 
   private Miembro unMiembro(ArrayList<Trayecto> trayectos){
     Miembro miembro = new Miembro(
-        "Test",
-        "Apellido",
-        TipoDocumento.DNI,
-        11222333,
+        new Persona(
+            "Test",
+            "Apellido",
+            TipoDocumento.DNI,
+            11222333
+        ),
         trayectos
     );
     return miembro;

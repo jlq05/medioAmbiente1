@@ -4,15 +4,22 @@ import domain.services.distancia.entities.Ubicacion;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "lineas")
 public class Linea extends PersistentEntity {
-  @ManyToMany
+  @OneToMany
+  @JoinColumn(name = "lineaIdaId")
+  @OrderColumn
   private List<Parada> paradasIda;
-  @ManyToMany
+
+  @OneToMany
+  @JoinColumn(name = "lineaVueltaId")
+  @OrderColumn
   private List<Parada> paradasVuelta;
 
   private Linea() {

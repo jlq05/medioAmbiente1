@@ -1,0 +1,52 @@
+{{# partial "titulo" }}
+    <title>Reportes</title>
+{{/partial}}
+<head>
+    <link rel="stylesheet" type="text/css" href="/reportesSectorTerritorial.css">
+</head>
+
+{{# partial "contenido" }}
+     <section>
+        <h3 class="header-title">Reportes</h3>
+
+        <form class="selector-organizacion" action="/home/reportes/hc-por-sector-territorial" method="POST">
+            <div class="campo">
+                Elija Sector Territorial
+                <div class="container-tipo">
+                    {{#each sectoresTerritoriales}}
+                        <div class="tipo-st">
+                            <input type="radio" id="{{id}}" name="tipoDeST" value="{{id}}">
+                            <label for="{{id}}">{{nombre}}</label>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+          
+            <div class="campo">
+                <span>Tipo de Reporte :</span>
+                <div class="container-tipo">
+                    <div class="tipo-reporte">
+                        <input type="radio" name="tipoDeReporte" value="HC TOTAL">
+                        <label for="HC TOTAL">HC TOTAL</label>
+                    </div>
+                    <div class="tipo-reporte">
+                        <input type="radio" name="tipoDeReporte" value="COMPOSICION HC TOTAL">
+                        <label for="COMPOSICION HC TOTAL">COMPOSICION HC TOTAL</label>
+                    </div>
+                     <div class="tipo-reporte">
+                        <input type="radio" name="tipoDeReporte" value="EVOLUCION HC TOTAL">
+                        <label for="EVOLUCION HC TOTAL">EVOLUCION HC TOTAL</label>
+                    </div>
+
+
+                </div>
+            </div>
+         
+            <div>
+                <input type="submit"  class="btn-borde-reporte" value="Obtener" />
+            </div>
+        </form>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

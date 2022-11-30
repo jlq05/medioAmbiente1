@@ -1,0 +1,46 @@
+{{# partial "titulo" }}
+    <title>Tramo</title>
+{{/partial}}
+
+{{# partial "contenido" }}
+    <section>
+        <form method="POST" action="/home/sector/{{sectorId}}/trayecto/{{trayectoId}}/tramo">
+            Creación de tramo
+            <div>
+                Origen
+                <input type="text" name="localidadOrigen"  placeholder="Localidad">
+                <input type="text" name="calleOrigen"  placeholder="Calle">
+                <input type="text" name="alturaOrigen"  placeholder="Altura">
+            </div>
+           <div>
+               Destino
+               <input type="text" name="localidadDestino"  placeholder="Localidad">
+               <input type="text" name="calleDestino"  placeholder="Calle">
+               <input type="text" name="alturaDestino"  placeholder="Altura">
+           </div>
+           <div>
+               <div class="item">
+                   <input type="radio" name="tipoDeTransporte" value="pie">
+                   <label for="pie">Pie</label>
+               </div>
+               <div class="item">
+                  <input type="radio" name="tipoDeTransporte" value="bicicleta">
+                  <label for="bicicleta">Bicicleta</label>
+               </div>
+               <div class="item">
+                  <input type="radio" name="tipoDeTransporte" value="transportePublico">
+                  <label for="transportePublico">Transporte público</label>
+               </div>
+               <div class="item">
+                  <input type="radio" name="tipoDeTransporte" value="automovil">
+                  <label for="automovil">Automóvil</label>
+               </div>
+           </div>
+           <div>
+             <input type="submit" class="btn-borde" value="Siguiente" />
+           </div>
+        </form>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

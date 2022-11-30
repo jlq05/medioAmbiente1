@@ -19,15 +19,22 @@ public class Pie extends MedioDeTransporte {
   private Pie() {
   }
 
-
   public Pie(ServicioDistancia servicio) {
-
     this.servicio = servicio;
   }
 
   @Override
-  public float obtenerDistancia(Ubicacion origen, Ubicacion destino) throws IOException {
-    //this.servicio = ServicioDistancia.getInstancia();
+  public String getMedioDeTransporte() {
+    return "Pie";
+  }
+
+  @Override
+  public float obtenerDistancia(
+      Ubicacion origen,
+      Ubicacion destino,
+      ServicioDistancia servicio
+  ) throws IOException {
+
     return servicio.obtenerDistancia(origen, destino);
   }
 

@@ -1,5 +1,6 @@
 package repositories;
 
+import domain.services.distancia.ServicioDistancia;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ public class RepositorioReportes extends AbstractPersistenceTest
       Long sectorTerritorialId, TipoPeriodicidad periodicidad, YearMonth periodo
   ) {
     SectorTerritorial sector = getSectorTerritorial(sectorTerritorialId);
-    return sector.obtenerCalculoHC(periodicidad, periodo);
+    return sector.obtenerCalculoHC(periodicidad, periodo, ServicioDistancia.getInstancia());
   }
 
   @SuppressWarnings("unchecked")
@@ -45,7 +46,7 @@ public class RepositorioReportes extends AbstractPersistenceTest
     Organizacion organizacion = sector.getOrganizaciones().stream().filter(item -> {
       return item.getId().equals(organizacionId);
     }).findFirst().get();
-    return organizacion.obtenerCalculoHC(periodicidad, periodo);
+    return organizacion.obtenerCalculoHC(periodicidad, periodo, ServicioDistancia.getInstancia());
   }
 
   @SuppressWarnings("unchecked")
@@ -61,7 +62,13 @@ public class RepositorioReportes extends AbstractPersistenceTest
               new SectorTerritorialComposicion(
                 sector.getNombre(),
                 organizacion.getRazonSocial(),
-                organizacion.obtenerCalculoHC(TipoPeriodicidad.Anual, YearMonth.now())));
+                organizacion.obtenerCalculoHC(
+                    TipoPeriodicidad.Anual,
+                    YearMonth.now(),
+                    ServicioDistancia.getInstancia()
+                )
+              )
+          );
         }
     );
     return reporte;
@@ -70,8 +77,9 @@ public class RepositorioReportes extends AbstractPersistenceTest
   @SuppressWarnings("unchecked")
   public List<OrganizacionComposicion> getHCorganizacionComposicion(Long idOrganizacion) {
 
+
     List<Organizacion> organizaciones =  entityManager()
-        .createQuery("from organizaciones where id = :id")
+        .createQuery("from Organizacion where id = :id")
         .setParameter("id", idOrganizacion)
         .getResultList();
 
@@ -82,7 +90,8 @@ public class RepositorioReportes extends AbstractPersistenceTest
           reporte.add(
               new OrganizacionComposicion(
                   organizacion.getRazonSocial(),
-                  sector.obtenerCalculoHC()
+                  sector.getNombre(),
+                  sector.obtenerCalculoHC(ServicioDistancia.getInstancia())
               )
           );
         }
@@ -92,13 +101,12 @@ public class RepositorioReportes extends AbstractPersistenceTest
 
   public Organizacion getOrganizacionBy(Long idOrganizacion) {
     List<Organizacion> organizaciones =  entityManager()
-        .createQuery("from organizaciones where id = :id")
+        .createQuery("from Organizacion where id = :id")
         .setParameter("id", idOrganizacion)
         .getResultList();
     return organizaciones.stream().findFirst().get();
-
   }
-  
+
   public List<EvolucionHc> getReportSectorTerritorialAnual(Long idSectorTerritorial,
                                                            int inicio, int fin) {
 
@@ -107,8 +115,12 @@ public class RepositorioReportes extends AbstractPersistenceTest
     int fecha = 0;
     List<EvolucionHc> report = new ArrayList<>();
     for (int i = 0; i < diff; i++) {
-      fecha = fecha + i;
-      float hcValor = sector.obtenerCalculoHC(TipoPeriodicidad.Anual, YearMonth.of(fecha, 1));
+      fecha = i;
+      float hcValor = sector.obtenerCalculoHC(
+          TipoPeriodicidad.Anual,
+          YearMonth.of(fecha, 1),
+          ServicioDistancia.getInstancia()
+      );
       EvolucionHc result = new EvolucionHc(hcValor, String.valueOf(fecha));
       report.add(result);
     }
@@ -125,8 +137,12 @@ public class RepositorioReportes extends AbstractPersistenceTest
     int fecha = 0;
     List<EvolucionHc> report = new ArrayList<>();
     for (int i = 0; i < diff; i++) {
-      fecha = fecha + i;
-      float hcValor = organizacion.obtenerCalculoHC(TipoPeriodicidad.Anual, YearMonth.of(fecha, 1));
+      fecha = i;
+      float hcValor = organizacion.obtenerCalculoHC(
+          TipoPeriodicidad.Anual,
+          YearMonth.of(fecha, 1),
+          ServicioDistancia.getInstancia()
+      );
       EvolucionHc result = new EvolucionHc(hcValor, String.valueOf(fecha));
       report.add(result);
     }
@@ -140,7 +156,11 @@ public class RepositorioReportes extends AbstractPersistenceTest
     YearMonth fecha = inicio;
     List<EvolucionHc> report = new ArrayList<>();
     while (fecha.isBefore(fin)) {
-      float hcValor = sector.obtenerCalculoHC(TipoPeriodicidad.Mensual, fecha);
+      float hcValor = sector.obtenerCalculoHC(
+          TipoPeriodicidad.Mensual,
+          fecha,
+          ServicioDistancia.getInstancia()
+      );
       EvolucionHc result = new EvolucionHc(hcValor, String.valueOf(fecha));
       report.add(result);
       fecha.plusMonths(1);
@@ -155,7 +175,11 @@ public class RepositorioReportes extends AbstractPersistenceTest
     YearMonth fecha = inicio;
     List<EvolucionHc> report = new ArrayList<>();
     while (fecha.isBefore(fin)) {
-      float hcValor = organizacion.obtenerCalculoHC(TipoPeriodicidad.Mensual, fecha);
+      float hcValor = organizacion.obtenerCalculoHC(
+          TipoPeriodicidad.Mensual,
+          fecha,
+          ServicioDistancia.getInstancia()
+      );
       EvolucionHc result = new EvolucionHc(hcValor, String.valueOf(fecha));
       report.add(result);
       fecha.plusMonths(1);

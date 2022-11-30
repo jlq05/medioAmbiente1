@@ -1,0 +1,23 @@
+{{# partial "titulo" }}
+    <title>Registro Medicion</title>
+{{/partial}}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/registroMedicion.css">
+</head>
+{{# partial "contenido" }}
+ <section>
+        <h3 class="header-title">Registro Mediciones</h3>
+        <div>
+            <a href="/home/medicion/archivo">
+                <input type="button" class="btn-borde-medicion" value="Subir CSSV"/>
+            </a>
+            <a href="/home/medicion/nuevo">
+                <input type="button" class="btn-borde-medicion" value="Agregar Medicion"/>
+            </a>
+        </div>
+
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

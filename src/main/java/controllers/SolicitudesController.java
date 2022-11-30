@@ -30,16 +30,16 @@ public class SolicitudesController implements WithGlobalEntityManager, Transacti
       if (sessionValidator.estaLogueado(request)
           && sessionValidator.tienePermisosAdmin(request)) {
         Map<String, Object> modelo = new HashMap<>();
-        String id = request.params(":organizacion_id");
+        int organizacionId = request.session().attribute("organizacion_id");
 
         Organizacion organizacion = RepositorioOrganizaciones
             .instancia
-            .buscar(Long.parseLong(id));
+            .buscar(organizacionId);
 
         List<PostulanteDto> encontrados = organizacion.getPostulantes();
 
         modelo.put("postulantes", encontrados);
-        modelo.put("organizacionId", id);
+        modelo.put("organizacionId", organizacionId);
 
         return new ModelAndView(modelo, "solicitudes.html.hbs");
       } else {
@@ -66,7 +66,7 @@ public class SolicitudesController implements WithGlobalEntityManager, Transacti
     });
 
     response
-        .redirect("/" + request.queryParams("organizacionId") + "/solicitudes");
+        .redirect("/home/solicitudes");
 
     return null;
   }

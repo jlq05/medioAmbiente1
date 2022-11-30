@@ -2,10 +2,12 @@ package model;
 
 public class OrganizacionComposicion {
   private String razonSocial;
+  private String nombre;
   private float hcSector;
 
-  public OrganizacionComposicion(String razonSocial, float hcSector) {
+  public OrganizacionComposicion(String razonSocial, String nombre, float hcSector) {
     this.razonSocial = razonSocial;
+    this.nombre = nombre;
     this.hcSector = hcSector;
   }
 
@@ -15,5 +17,13 @@ public class OrganizacionComposicion {
 
   public String getRazonSocial() {
     return razonSocial;
+  }
+
+  public String getNombre() {
+    return nombre;
+  }
+
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
   }
 }

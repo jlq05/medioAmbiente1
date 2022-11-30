@@ -1,0 +1,33 @@
+{{# partial "titulo" }}
+    <title>Sectores</title>
+{{/partial}}
+
+{{# partial "contenido" }}
+    <section>
+        <div>
+            <div class="q-mb-sm">Sectores</div>
+            <section class="seccion-sector" style="border: ridge #141414 1px;">
+                <table style="text-align:center;">
+                    <tr class="row-tr">
+                        <td>ID</td>
+                        <td>Nombre sector</td>
+                        <td></td>
+                    </tr>
+                    {{#each sectores}}
+                        <tr class="row-tr">
+                            <td>{{id}}</td>
+                            <td>{{nombre}}</td>
+                            <td>
+                                <a href="sector/{{id}}/trayectos">
+                                    <input type="button" class="btn-borde" value="Ver"/>
+                                </a>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </table>
+           </section>
+        </div>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

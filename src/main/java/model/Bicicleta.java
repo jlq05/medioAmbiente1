@@ -1,7 +1,6 @@
 package model;
 
 import domain.services.distancia.ServicioDistancia;
-import domain.services.distancia.ServicioDistanciaInterface;
 import domain.services.distancia.entities.Ubicacion;
 import java.io.IOException;
 import javax.persistence.DiscriminatorValue;
@@ -24,9 +23,17 @@ public class Bicicleta extends MedioDeTransporte {
   }
 
   @Override
-  public float obtenerDistancia(Ubicacion origen, Ubicacion destino) throws IOException {
+  public String getMedioDeTransporte() {
+    return "Bicicleta";
+  }
 
-    //this.servicio = ServicioDistancia.getInstancia();
+  @Override
+  public float obtenerDistancia(
+      Ubicacion origen,
+      Ubicacion destino,
+      ServicioDistancia servicio
+  ) throws IOException {
+
     return servicio.obtenerDistancia(origen, destino);
   }
 

@@ -1,0 +1,28 @@
+{{# partial "titulo" }}
+    <title>Reportes</title>
+{{/partial}}
+<head>
+    <link rel="stylesheet" type="text/css" href="/reportesSectorTerritorial.css">
+</head>
+
+{{# partial "contenido" }}
+    <section>
+         Organizacion: {{organizacion}}
+         <section class="container" style="border: ridge #141414 1px;">
+             <table style="text-align:center;">
+                 <tr class="row-tr">
+                     <td>Fecha</td>
+                     <td>HC</td>
+                 </tr>
+                 {{#each organizacionEvoluciones}}
+                     <tr class="row-tr">
+                         <td>{{fecha}}</td>
+                         <td>{{hcValor}}</td>
+                     </tr>
+                 {{/each}}
+             </table>
+        </section>
+     </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

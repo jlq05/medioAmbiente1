@@ -93,29 +93,6 @@
       <artifactId>jpa-java8-extras</artifactId>
       <version>1.0-alpha-1</version>
     </dependency>
-    <dependency>
-      <groupId>com.sparkjava</groupId>
-      <artifactId>spark-core</artifactId>
-      <version>2.9.4</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.sparkjava</groupId>
-      <artifactId>spark-template-handlebars</artifactId>
-      <version>2.7.1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.sparkjava</groupId>
-      <artifactId>spark-debug-tools</artifactId>
-      <version>0.5</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/com.heroku.sdk/heroku-maven-plugin -->
-    <dependency>
-      <groupId>com.heroku.sdk</groupId>
-      <artifactId>heroku-maven-plugin</artifactId>
-      <version>3.0.5</version>
-    </dependency>
 
     <dependency>
       <groupId>com.sparkjava</groupId>
@@ -134,21 +111,7 @@
       <artifactId>spark-debug-tools</artifactId>
       <version>0.5</version>
     </dependency>
-    <dependency>
-      <groupId>com.sparkjava</groupId>
-      <artifactId>spark-core</artifactId>
-      <version>2.7.2</version>
-    </dependency>
-    <dependency>
-      <groupId>com.sparkjava</groupId>
-      <artifactId>spark-debug-tools</artifactId>
-      <version>0.5</version>
-    </dependency>
-    <dependency>
-      <groupId>com.sparkjava</groupId>
-      <artifactId>spark-template-velocity</artifactId>
-      <version>2.7.1</version>
-    </dependency>
+
   </dependencies>
 
   <build>
@@ -247,7 +210,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>NotificacionApp</mainClass>
+              <mainClass>main.Routes</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
@@ -264,41 +227,18 @@
         </executions>
       </plugin>
       <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <descriptorRefs>
-            <!-- This tells Maven to include all dependencies -->
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-          <archive>
-            <manifest>
-              <mainClass>./src/java/main/Routes</mainClass>
-            </manifest>
-          </archive>
-          <finalName>${artifactId}</finalName>
-        </configuration>
-      </plugin>
-      <plugin>
         <groupId>com.heroku.sdk</groupId>
-        <artifactId>heroku-maven-plugin</artifactId>
-        <configuration>
-          <jdkVersion>1.8</jdkVersion>
-          <!-- Use your own application name -->
-          <appName>medioambiente1</appName>
-          <processTypes>
-            <!-- Tell Heroku how to launch your application -->
-            <!-- You might have to remove the ./ in front -->
-            <web>java -jar target/ejercicio-jar-with-dependencies</web>
-          </processTypes>
-        </configuration>
+          <artifactId>heroku-maven-plugin</artifactId>
+          <version>0.4.4</version>
+          <configuration>
+              <jdkVersion>1.8</jdkVersion>
+              <!-- Use your own application name -->
+              <appName>tp-medio-ambiente</appName> 
+              <processTypes>
+                  <!-- You might have to remove the ./ in front   -->
+                  <web>java -jar .\target\ejercicio-1.0-SNAPSHOT-jar-with-dependencies.jar 5432</web>
+              </processTypes>
+          </configuration>
       </plugin>
     </plugins>
   </build>

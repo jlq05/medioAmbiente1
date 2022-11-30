@@ -1,9 +1,7 @@
 package model;
 
 public class EvolucionHc {
-
   private float hcValor;
-
   private String fecha;
 
   public EvolucionHc(float hcValor, String fecha) {
