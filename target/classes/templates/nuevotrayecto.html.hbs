@@ -1,0 +1,42 @@
+{{# partial "titulo" }}
+    <title>Nuevo trayecto</title>
+{{/partial}}
+
+{{# partial "contenido" }}
+    <section>
+        <div>
+            Tramos del trayecto
+            <div>
+                Periodicidad de imputación
+                <input type="date" id="PeriodicidadDeImputación"  placeholder="Seleccione fecha">
+            </div>
+            <section class="seccion-trayecto" style="border: ridge #141414 1px;">
+                <table style="text-align:center;">
+                    <tr class="row-tr">
+                        <td>Origen</td>
+                        <td>Destino</td>
+                        <td>Medio de transporte</td>
+                    </tr>
+                    <tr class="row-tr">
+                        <td>Almagro</td>
+                        <td>Parque Avellaneda</td>
+                        <td>Auto</td>
+                    </tr>
+                    <tr class="row-tr">
+                        <td>Almagro</td>
+                        <td>Parque Avellaneda</td>
+                        <td>Auto</td>
+                    </tr>
+                </table>
+           </section>
+
+           <div class="q-mb-sm">
+           <a href="/homeUsuario/trayecto/tramo/nuevo">
+               <input type="button" id="agregarTramo" class="btn-borde" value="Agregar tramo" autofocus="true" />
+            </a>
+          </div>
+        </div>
+    </section>
+{{/partial}}
+
+{{> layoutUsuario.html.hbs }}

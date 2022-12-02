@@ -1,0 +1,18 @@
+{{# partial "titulo" }}
+    <title>Trayecto nuevo</title>
+{{/partial}}
+
+{{# partial "contenido" }}
+    <section>
+        Trayecto {{sectorId}}
+        <form method="POST" action="/home/sector/{{sectorId}}/trayecto">
+            <div>
+                Periodicidad de imputación
+                <input type="date" name="periodicidadDeImputacion"  placeholder="Periodicidad de imputación">
+            </div>
+            <input type="submit" value="Crear trayecto">
+        </form>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

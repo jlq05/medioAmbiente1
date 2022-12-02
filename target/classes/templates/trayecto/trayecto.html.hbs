@@ -1,0 +1,36 @@
+{{# partial "titulo" }}
+    <title>Trayecto</title>
+{{/partial}}
+
+{{# partial "contenido" }}
+    <section>
+        <div>
+            <div class="q-mb-sm">Trayectos</div>
+            <section class="seccion-trayecto" style="border: ridge #141414 1px;">
+                <table style="text-align:center;">
+                    <tr class="row-tr">
+                        <td>Periodicidad de imputación</td>
+                        <td>Cant. tramos</td>
+                    </tr>
+                    <tr class="row-tr">
+                        <td>2022-10-26</td>
+                        <td>2</td>
+                    </tr>
+                    <tr class="row-tr">
+                        <td>2022-10-26</td>
+                        <td>5</td>
+                    </tr>
+                </table>
+           </section>
+
+           <div class="q-mb-sm">
+              <a href="/trayecto/nuevo">
+                 <input type="button" id="agregarTrayecto" class="btn-borde" value="Agregar trayecto" autofocus="true" />
+              </a>
+           </div>
+
+        </div>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

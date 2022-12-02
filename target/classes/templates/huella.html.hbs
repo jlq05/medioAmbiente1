@@ -1,0 +1,17 @@
+{{# partial "titulo" }}
+    <title>Calculo de HC</title>
+{{/partial}}
+
+{{# partial "contenido" }}
+    <section class="fondo-gris">
+        <h2>Calculo de HC</h2>
+        <div>
+            <h1>{{razonSocial}}</h1>
+            <div>Huella de Carbono por trayectos: {{hcTrayecto}}</div>
+            <div>Huella de Carbono por actividad: {{hcActividad}}</div>
+            <div>Huella de Carbono total: {{hcTotal}}</div>
+        </div>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

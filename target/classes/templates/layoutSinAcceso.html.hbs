@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    {{# block "titulo" }}
+    {{/block}}
+</head>
+
+<body>
+<header>
+    <div class="section">
+        <a class="item-menu" href="/homeUsuario">Home</a>
+        {{#if sesionIniciada}}
+            <a class="item-menu" href="/loginUsuarioSinLogueo">Iniciar Sesión</a>
+        {{else}}
+            <form action="/loginUsuarioSinLogueo/logout" method="POST">
+                <input class="item-menu" type="submit" value="Cerrar Sesión">
+            </form>
+        {{/if}}
+    </div>
+</header>
+<main class="wrapper">
+    {{# block "contenido" }}
+    {{/block}}
+</main>
+<footer>
+    <div class="section">UTN FRBA CATEDRA DISEÑO 2022</div>
+    <p align="left">{{ fecha }}</p>
+</footer>
+</body>
+
+</html>

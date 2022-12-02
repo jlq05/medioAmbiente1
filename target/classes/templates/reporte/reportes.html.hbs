@@ -1,0 +1,50 @@
+{{# partial "titulo" }}
+    <title>Reportes</title>
+{{/partial}}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/reportes.css">
+</head>
+
+{{# partial "contenido" }}
+    <section>
+        <h3 class="header-title">Reportes</h3>
+        <div>
+            <a href="/home/reportes/hc-por-tipo-organizacion">
+                <input type="button" class="btn-borde-reportes" value="HC Total por tipo de Organizacion" />
+            </a>
+            <a href="/home/reportes/hc-por-sector-territorial">
+                <input type="button" class="btn-borde-reportes" value="HC Total por sector territorial" />
+            </a>
+            <a href="/home/reportes/hc-composicion-sector-territorial">
+                <input type="button" class="btn-borde-reportes" value="Composicion de HC total de un sector territorial" />
+            </a>
+            <a href="/home/reportes/hc-composicion-organizacion">
+                <input type="button" class="btn-borde-reportes" value="Composicion de HC total de una Organizacion" />
+            </a>
+            <a href="/home/reportes/hc-evolucion-sector-territorial">
+                <input type="button" class="btn-borde-reportes" value="Evolucion de HC total de un sector territorial" />
+            </a>
+            <a href="/home/reportes/hc-evolucion-organizacion">
+                <input type="button" class="btn-borde-reportes" value="Evolucion de HC total de una Organizacion" />
+            </a>
+
+            <!--a href="/home/reportes/tipoOrganizacion">
+                <input type="button"  class="btn-borde-reportes" value="HC Total por tipo de Organizacion" />
+            </a>
+            <a href="/home/reportes/sectorTerritorial">
+                <input type="button"  class="btn-borde-reportes" value="Reportes Sector Territorial" />
+            </a>
+            <a>
+                <input type="button"  class="btn-borde-reportes" value="  Composicion de HC total de una Organizacion" />
+            </a>
+            <a>
+                <input type="button"  class="btn-borde-reportes" value="  Evolucion de HC total de una Organizacion" />
+            </a-->
+        </div>
+    </section>
+{{/partial}}
+        
+{{> layout.html.hbs }}
+
+ 

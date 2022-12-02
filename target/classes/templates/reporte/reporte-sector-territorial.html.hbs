@@ -1,0 +1,22 @@
+{{# partial "titulo" }}
+    <title>Reportes</title>
+{{/partial}}
+<head>
+    <link rel="stylesheet" type="text/css" href="/reportesSectorTerritorial.css">
+</head>
+
+{{# partial "contenido" }}
+     <section>
+        Sector territorial
+        <div class="container">
+            <div class="item">
+                Nombre: {{nombre}}
+            </div>
+            <div class="item">
+                HC: {{hc}}
+            </div>
+        </div>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

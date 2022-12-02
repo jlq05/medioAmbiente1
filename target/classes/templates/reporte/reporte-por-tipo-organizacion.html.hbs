@@ -1,0 +1,42 @@
+{{# partial "titulo" }}
+    <title>Reportes</title>
+{{/partial}}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/reportes.css">
+</head>
+
+{{# partial "contenido" }}
+    <section>
+        <h3 class="header-title">Seleccione clasificación</h3>
+        <form method="POST" action="/home/reportes/hc-por-tipo-organizacion">
+            <div class="container">
+                <div class="tipo-clasificacion">
+                  <input type="radio" name="tipoClasificacion" value="ministerio">
+                  <label for="ministerio">Ministerio</label>
+                </div>
+                <div class="tipo-clasificacion">
+                  <input type="radio" name="tipoClasificacion" value="universidad">
+                  <label for="universidad">Universidad</label>
+                </div>
+                <div class="tipo-clasificacion">
+                  <input type="radio" name="tipoClasificacion" value="escuela">
+                  <label for="escuela">Escuela</label>
+                </div>
+                <div class="tipo-clasificacion">
+                  <input type="radio" name="tipoClasificacion" value="sectorPrimario">
+                  <label for="sectorPrimario">Sector primario</label>
+                </div>
+                <div class="tipo-clasificacion">
+                  <input type="radio" name="tipoClasificacion" value="sectorSecundario">
+                  <label for="sectorSecundario">Sector secundario</label>
+                </div>
+            </div>
+            <input type="submit" value="Ver HC por clasificación">
+        </form>
+    </section>
+{{/partial}}
+        
+{{> layout.html.hbs }}
+
+ 

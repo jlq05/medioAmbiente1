@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  {{# block "titulo" }}
+  {{/block}}
+</head>
+
+<body>
+  <header>
+    <div class="section">
+        <a class="item-menu" href="/">Home</a>
+        {{#if Usuario}}
+            <a class="item-menu" href="/home/sectoresPorUsuario">Sectores</a>
+            <a class="item-menu" href="/home/vinculacion">Vinculaciones</a>
+            <a class="item-menu" href="/home/huella">Calcular HC</a>
+            <a class="item-menu" href="/home/recomendaciones">Guia de Recomendaciones</a>
+        {{/if}}
+        {{#if Administrador}}
+            <a class="item-menu" href="/home/huella">Calcular HC</a>
+            <a class="item-menu" href="/home/solicitudes">Solicitudes</a>
+            <a class="item-menu" href="/home/reportes">Reportes</a>
+            <a class="item-menu" href="/home/medicion">Mediciones</a>
+            <a class="item-menu" href="/home/recomendaciones">Guia de Recomendaciones</a>
+        {{/if}}
+        {{#if sesionIniciada}}
+            <form action="/loginUsuarioSinLogueo/logout" method="POST">
+                <input class="item-menu2" type="submit" value="Cerrar Sesión">
+            </form>
+        {{else}}
+            <a class="item-menu" href="/loginUsuarioSinLogueo">Iniciar Sesión</a>
+        {{/if}}
+    </div>
+  </header>
+  <main class="wrapper">
+    {{# block "contenido" }}
+    {{/block}}
+  </main>
+  <footer>
+      <div class="section">UTN FRBA CATEDRA DISEÑO 2022</div>
+      <p align="left">{{ fecha }}</p>
+  </footer>
+</body>
+
+</html>

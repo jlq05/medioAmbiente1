@@ -1,0 +1,51 @@
+{{# partial "titulo" }}
+    <title>Tramo</title>
+{{/partial}}
+
+{{# partial "contenido" }}
+    <section>
+        <form method="POST" action="/home/sector/{{sectorId}}/trayecto/{{trayectoId}}/tramo/{{tramoId}}/automovil">
+            Completar datos del tramo por automovil
+            <div>
+                <input type="number" name="consumoCombustible"  placeholder="Consumo de combustible" />
+                <div class="item">
+                   <input type="radio" name="esPrivado" value="esPrivado">
+                   <label for="esPrivado">Es privado</label>
+               </div>
+            </div>
+            <div class="tipo-auto">
+               Tipo de auto
+               <div class="item">
+                   <input type="radio" name="tipoDeAuto" value="auto">
+                   <label for="auto">Auto</label>
+               </div>
+               <div class="item">
+                  <input type="radio" name="tipoDeAuto" value="moto">
+                  <label for="moto">Moto</label>
+               </div>
+               <div class="item">
+                 <input type="radio" name="tipoDeAuto" value="servicioContratado">
+                 <label for="servicioContratado">Servicio Contratado</label>
+              </div>
+               <div class="item">
+                  <input type="radio" name="tipoDeAuto" value="camioneta">
+                  <label for="camioneta">Camioneta</label>
+               </div>
+            </div>
+            Tipo de consumo
+            <div class="container-tipo">
+                {{#each tiposConsumo}}
+                    <div class="tipo-consumo">
+                        <input type="radio" id="{{id}}" name="tipoDeConsumo" value="{{id}}">
+                        <label for="{{id}}">{{tipoDescripcion}}</label>
+                    </div>
+                {{/each}}
+            </div>
+           <div class="text-center">
+             <input type="submit" class="btn-borde" value="Siguiente" />
+           </div>
+        </form>
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

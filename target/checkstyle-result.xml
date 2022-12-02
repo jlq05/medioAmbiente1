@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.29">
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\AutenticadorController.java">
+<error line="11" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\BuscarOrganizacionController.java">
+<error line="10" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="19" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\CerrarSesionController.java">
+<error line="10" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\HuellaController.java">
+<error line="26" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="84" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\LoginController.java">
+<error line="19" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="31" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="59" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\LoginSinRegistrarseController.java">
+<error line="15" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="27" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="45" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\MedicionController.java">
+<error line="22" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="33" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="44" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="56" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\OrganizacionController.java">
+<error line="18" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\RecomendacionController.java">
+<error line="12" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\ReportesController.java">
+<error line="31" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="40" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="49" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="78" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="90" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="109" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="124" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="145" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="166" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="185" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="200" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="221" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="242" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\RepositorioUsuarios.java">
+<error line="17" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="36" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="42" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="48" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\SectorController.java">
+<error line="24" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="41" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="53" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\SectoresController.java">
+<error line="19" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="31" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\SinAccesoController.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\SolicitudesController.java">
+<error line="22" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="51" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\TramoController.java">
+<error line="29" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="37" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="50" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="70" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="87" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="126" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\TrayectoController.java">
+<error line="37" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="46" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="57" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="75" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="104" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="115" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="128" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="155" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\controllers\VinculacionController.java">
+<error line="16" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="30" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\domain\services\distancia\entities\RespuestaDistancia.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\domain\services\distancia\entities\Ubicacion.java">
+<error line="22" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\domain\services\distancia\ServicioDistancia.java">
+<error line="24" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\domain\services\distancia\ServicioDistanciaApiInterface.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\domain\services\distancia\ServicioDistanciaInterface.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\enums\Rol.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\excepciones\BusquedaEnBaseDeDatosException.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\excepciones\UsuarioYaRegistradoException.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\main\Bootstrap.java">
+<error line="96" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\main\HomeController.java">
+<error line="17" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\main\Routes.java">
+<error line="74" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="82" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\ArchivoException.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Bicicleta.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Clasificacion.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Constantes.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Contacto.java">
+<error line="22" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\ContrsenaInvalidaException.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\CriterioFormato.java">
+<error line="8" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\CriterioTop10k.java">
+<error line="8" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\DatosActividad.java">
+<error line="29" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="54" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\EvolucionHc.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Intervalo.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Linea.java">
+<error line="49" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="56" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="66" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="73" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="90" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\MedioDeTransporte.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Miembro.java">
+<error line="46" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\NotificacionApp.java">
+<error line="8" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\NotificacionMail.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\NotificacionWhatsApp.java">
+<error line="11" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Notificador.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Organizacion.java">
+<error line="58" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="109" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="124" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="131" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="139" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="145" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="155" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="161" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="177" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="198" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\OrganizacionComposicion.java">
+<error line="8" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Parada.java">
+<error line="19" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\ParadaNoExisteException.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\PersistentEntity.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Persona.java">
+<error line="44" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Pie.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\PostulanteDto.java">
+<error line="12" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\ProcesadorArchivos.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\ProcesadorCsv.java">
+<error line="27" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Sector.java">
+<error line="29" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="63" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="71" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\SectorTerritorial.java">
+<error line="45" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\SectorTerritorialComposicion.java">
+<error line="8" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\TipoAlcance.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\TipoConsumo.java">
+<error line="22" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\TipoDocumento.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\TipoOrganizacion.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\TipoPeriodicidad.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\TipoSectorTerritorial.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\TipoTransportePublico.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\TipoUnidad.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\TipoVehiculo.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Tramo.java">
+<error line="49" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="86" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\TransportePublico.java">
+<error line="43" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Trayecto.java">
+<error line="46" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="61" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="78" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\TwilioWhatsApp.java">
+<error line="12" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\UnidadInvalidaException.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Usuario.java">
+<error line="29" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Validacion.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\ValorNegativoInvalidoException.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\Vehiculo.java">
+<error line="40" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="84" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\WhatappException.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\model\WhatsApp.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\repositories\RepositorioDatosActividad.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\repositories\RepositorioMiembros.java">
+<error line="18" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\repositories\RepositorioOrganizacion.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\repositories\RepositorioOrganizaciones.java">
+<error line="18" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="24" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="37" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="60" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="67" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\repositories\RepositorioReportes.java">
+<error line="19" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="38" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="52" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="77" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="102" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="110" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="130" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="152" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="171" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\repositories\RepositorioSectores.java">
+<error line="17" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\repositories\RepositorioSectorTerritorial.java">
+<error line="10" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="16" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\repositories\RepositorioTipoDeConsumo.java">
+<error line="10" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="16" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\repositories\RepositorioTransportePublico.java">
+<error line="14" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\repositories\RepositorioTrayecto.java">
+<error line="15" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="25" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\repositories\RepositorioUsuarios.java">
+<error line="20" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="41" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="47" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="60" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\TipoRol.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\utils\SessionValidator.java">
+<error line="22" column="3" severity="warning" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\utils\YearMonthDateAttributeConverter.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\view\OrganizacionVista.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\view\TramoVista.java">
+</file>
+<file name="D:\Repositorios\UTN\Diseño de sistemas\medioAmbiente1\src\main\java\view\TrayectoVista.java">
+</file>
+</checkstyle>

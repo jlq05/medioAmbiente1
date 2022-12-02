@@ -1,0 +1,15 @@
+TestTrayecto.class
+TestSectorTerritorial.class
+TestCriterioTop10k.class
+TestDistanciaApi.class
+TestOrganizaciones.class
+TestDatosActividad.class
+TestUtil.class
+TestCriterioFormato.class
+TestHuellaDeCarbonoOrganizacion.class
+TestHuellaDeCarbonoMiembro.class
+TestRepositorySectorTerritorial.class
+TestAdministrador.class
+TestContext.class
+TestNotificacionWhatsApp.class
+TestProcesadorCsv.class
