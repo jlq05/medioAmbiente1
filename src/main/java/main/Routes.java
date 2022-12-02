@@ -71,7 +71,7 @@ public class Routes {
     return 4567;
   }
 
-  public static void main(String[] args) {
+  public static void main2(String[] args) {
     System.out.println("Inicio");
     int puerto = getHerokuAssignedPort();//Integer.parseInt(args[0]);;
     Spark.port(puerto);
@@ -79,7 +79,7 @@ public class Routes {
     Spark.get("/", (req, res) -> "Hello Heroku World");
   }
 
-  public static void main2(String[] args) {
+  public static void main(String[] args) {
     System.out.println("Pepe");
     int puerto = Integer.parseInt(args[0]);
     Spark.port(puerto);
