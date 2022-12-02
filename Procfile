@@ -1,3 +1,3 @@
 
-web: java -jar ejercicio-1.0-SNAPSHOTd-jar-with-dependencies.jar
+web: java -jar ejercicio-1.0-SNAPSHOT-jar-with-dependencies.jar 8080
 
