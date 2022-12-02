@@ -62,6 +62,7 @@ public class Routes {
   }
 
   public static void main(String[] args) {
+    System.out.println("Inicio");
     int puerto = 8080;//Integer.parseInt(args[0]);;
     Spark.port(puerto);
     System.out.println("Iniciando el servidor...");
@@ -69,6 +70,7 @@ public class Routes {
   }
 
   public static void main2(String[] args) {
+    System.out.println("Pepe");
     int puerto = Integer.parseInt(args[0]);
     Spark.port(puerto);
     System.out.println("Iniciando el servidor...");
