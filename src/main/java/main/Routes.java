@@ -81,7 +81,7 @@ public class Routes {
 
   public static void main(String[] args) {
     System.out.println("Pepe");
-    int puerto = Integer.parseInt(args[0]);
+    int puerto = getHerokuAssignedPort();
     Spark.port(puerto);
     System.out.println("Iniciando el servidor...");
     System.out.println(puerto);
