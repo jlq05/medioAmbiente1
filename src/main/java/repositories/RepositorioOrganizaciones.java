@@ -3,6 +3,7 @@ package repositories;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 import model.Clasificacion;
 import model.Miembro;
@@ -40,10 +41,10 @@ public class RepositorioOrganizaciones implements WithGlobalEntityManager {
       return organizacion.sectores.stream().anyMatch(sector -> {
         boolean esPostulante = sector.getPostulantes().stream().anyMatch(miembro -> {
           return miembro.getPersona().getId() == usuarioId;
-        });;
+        });
         boolean esMiembro = sector.getMiembros().stream().anyMatch(miembro -> {
           return miembro.getPersona().getId() == usuarioId;
-        });;
+        });
         return esPostulante || esMiembro;
       });
     }).collect(Collectors.toList());
@@ -58,11 +59,24 @@ public class RepositorioOrganizaciones implements WithGlobalEntityManager {
   }
 
   public List<Organizacion> buscarPorNombre(String nombre) {
+
     return entityManager()
-        .createQuery("from Organizacion c where c.razonSocial like :nombre", Organizacion.class) //
-        .setParameter("nombre", "%" + nombre + "%") //
-        .getResultList();
+          .createQuery("from Organizacion c where c.razonSocial like :nombre",
+              Organizacion.class) //
+          .setParameter("nombre", "%" + nombre + "%") //
+          .getResultList();
   }
+
+  public boolean existeOrganizacion(String nombre) {
+
+    List<Organizacion> query = entityManager()
+         .createQuery("from Organizacion o where o.razonSocial like :nombre",
+             Organizacion.class)
+        .setParameter("nombre",  "%" + nombre + "%")
+        .getResultList();
+    return query.contains(nombre);
+  }
+
 
   public List<Miembro> listarPostulantes(long id) {
     Organizacion organizacion = this.buscar(id);

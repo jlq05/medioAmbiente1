@@ -1,8 +1,10 @@
 package main;
 
+import controllers.ErroresController;
 import controllers.HuellaController;
 import controllers.LoginController;
 import controllers.MedicionController;
+import controllers.NotificacionController;
 import controllers.RecomendacionController;
 import controllers.ReportesController;
 import controllers.SectorController;
@@ -61,33 +63,22 @@ public class Routes {
     );
   }
 
-  static int getHerokuAssignedPort() { 
-    ProcessBuilder processBuilder = new ProcessBuilder(); 
+  static int getHerokuAssignedPort() {
+    ProcessBuilder processBuilder = new ProcessBuilder();
     if (processBuilder.environment().get("PORT") != null) {
-      System.out.println("Existe puerto");
-      System.out.println(processBuilder.environment().get("PORT"));
       return Integer.parseInt(processBuilder.environment().get("PORT"));
-    } 
-    return 4567;
-  }
-
-  public static void main2(String[] args) {
-    System.out.println("Inicio");
-    int puerto = getHerokuAssignedPort();//Integer.parseInt(args[0]);;
-    Spark.port(puerto);
-    System.out.println("Iniciando el servidor...");
-    Spark.get("/", (req, res) -> "Hello Heroku World");
+    }
+    return 8080;
   }
 
   public static void main(String[] args) {
-    System.out.println("Pepe");
     int puerto = getHerokuAssignedPort();
     Spark.port(puerto);
     System.out.println("Iniciando el servidor...");
     System.out.println(puerto);
     Spark.staticFileLocation("/public");
 
-    System.out.println("Corriendo bootstrap...");
+    //System.out.println("Corriendo bootstrap...");
     new Bootstrap().run();
 
     DebugScreen.enableDebugScreen();
@@ -114,6 +105,9 @@ public class Routes {
     SinAccesoController sinAccesoController = new SinAccesoController();
     HuellaController huellaController = new HuellaController();
     RecomendacionController recomendacionController = new RecomendacionController();
+    NotificacionController notificacionController = new NotificacionController();
+    ErroresController erroresController = new ErroresController();
+    Spark.get("/notificaciones", notificacionController::enviarNotificaciones);
     Spark.path("/home", () -> {
       //Perfil usuario
       Spark.get("/vinculacion", vinculacionController::lectura, engine);
@@ -129,9 +123,8 @@ public class Routes {
       Spark.post("/solicitudes", solicitudesController::vincular);
       Spark.get("/medicion", medicionController::getOpcionesDeRegistroDeMedicion, engine);
       Spark.get("/medicion/nuevo", medicionController::getFormularioMedicion, engine);
-      Spark.get("/medicion/nuevo", medicionController::getFormularioMedicion, engine);
       Spark.get("/medicion/archivo", medicionController::getPantallaCargarArchivo, engine);
-      // Spark.get("/medicion/archivo", medicionController::cargarArchivo, engine);
+      Spark.post("/medicion/archivo", medicionController::cargarArchivo, engine);
       Spark.post("/medicion", medicionController::crearMedicion, engine);
       Spark.path("/reportes", () -> {
         Spark.get("", reportesController::getOpcionesDeReportes, engine);
@@ -162,6 +155,7 @@ public class Routes {
       });
       
       Spark.get("/sinAcceso", sinAccesoController::lectura, engine);
+      Spark.get("/errores", erroresController::lectura, engine);
       Spark.get("/recomendaciones", recomendacionController::lectura, engine);
     });
     procesarTrayectos(engine);

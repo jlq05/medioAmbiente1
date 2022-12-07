@@ -152,10 +152,10 @@ public class Organizacion extends PersistentEntity {
         + obtenerCalculoHcPorActividades(intervalo);
   }
 
-  public void cargarConsumos(File archivo) {
+  public List<DatosActividad> cargarConsumos(File archivo) {
     ProcesadorCsv procesador = new ProcesadorCsv();
     procesador.procesarArchivo(archivo);
-    //return procesador.get
+    return procesador.datosActividad;
   }
 
   public float obtenerResultadoPersonal(Miembro miembro, ServicioDistancia servicioDistancia) {
@@ -169,9 +169,9 @@ public class Organizacion extends PersistentEntity {
     this.contactos.add(contacto);
   }
 
-  public void notificar(String mensaje,String asunto) {
+  public void notificar(String mensaje, String asunto) {
     contactos
-        .forEach(c -> tiposDeNotificacion.forEach(n -> n.enviarNotificacion(mensaje,c,asunto)));
+        .forEach(c -> tiposDeNotificacion.forEach(n -> n.enviarNotificacion(mensaje, c, asunto)));
   }
 
   public List<PostulanteDto> getPostulantes() {

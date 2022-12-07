@@ -17,7 +17,7 @@ public class DatosActividad extends PersistentEntity {
   private TipoConsumo tipoConsumo;
 
   private float valor;
-  @Enumerated(EnumType.ORDINAL)
+  @Enumerated(EnumType.STRING)
   private TipoPeriodicidad tipoPeriodicidad;
 
   @Convert(converter = YearMonthDateAttributeConverter.class)

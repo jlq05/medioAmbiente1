@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import repositories.RepositorioDatosActividad;
 
 public class ProcesadorCsv implements ProcesadorArchivos {
 
@@ -134,6 +135,7 @@ public class ProcesadorCsv implements ProcesadorArchivos {
   }
 
   private void cargarDato(String[] columnas) {
+    List<TipoConsumo> tipoConsumos = RepositorioDatosActividad.instancia.buscarDatos();
     for (TipoConsumo tipoConsumo : tipoConsumos) {
       if (tipoConsumo.getTipoDescripcion().equals(columnas[0])) {
 

@@ -1,15 +1,12 @@
 package model;
 
-import java.util.List;
-import repositories.RepositorioOrganizacion;
+import controllers.NotificacionController;
 
 public class NotificacionApp {
 
   public static void main(String[] arg) {
-    RepositorioOrganizacion db = new RepositorioOrganizacion();
-    List<Organizacion> listOrg = db.getAll();
-    listOrg.forEach(o -> o.notificar("hola mundo!", "Asunto del mensaje"));
-
+    NotificacionController notificacionController = new NotificacionController();
+    notificacionController.enviarNotificaciones(null, null);
   }
 
 }

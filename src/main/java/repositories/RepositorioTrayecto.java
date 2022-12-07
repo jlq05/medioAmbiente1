@@ -1,6 +1,5 @@
 package repositories;
 
-import model.Miembro;
 import model.Tramo;
 import model.Trayecto;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;

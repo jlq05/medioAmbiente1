@@ -54,7 +54,7 @@ public class Linea extends PersistentEntity {
   }
 
   public float distanciaEntreParadas(List<Parada> paradas, Ubicacion origen, Ubicacion destino) {
-    return (float)paradas.stream().filter(parada ->
+    return (float) paradas.stream().filter(parada ->
         entre(
             indexParada(paradas, origen),
             indexParada(paradas, destino),

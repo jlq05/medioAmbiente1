@@ -58,11 +58,11 @@ public class TramoController implements WithGlobalEntityManager, TransactionalOp
     List<TransportePublico> transportesPublicos =
         RepositorioTransportePublico.instancia.getTransportesPublicos();
     Map model = new HashMap();
-    model.put("sectorId",  sectorId);
-    model.put("trayectoId",  trayectoId);
-    model.put("tramoId",  tramoId);
-    model.put("tiposConsumo",  tiposConsumo);
-    model.put("transportesPublicos",  transportesPublicos);
+    model.put("sectorId", sectorId);
+    model.put("trayectoId", trayectoId);
+    model.put("tramoId", tramoId);
+    model.put("tiposConsumo", tiposConsumo);
+    model.put("transportesPublicos", transportesPublicos);
     model = new SessionValidator().setearPermisosParaTemplate(model, request);
     return new ModelAndView(model, "trayecto/tramo-transporte-publico.html.hbs");
   }
@@ -76,10 +76,10 @@ public class TramoController implements WithGlobalEntityManager, TransactionalOp
     int tramoId = Integer.parseInt(request.params(":tramoId"));
     List<TipoConsumo> tiposConsumo = RepositorioTipoDeConsumo.instancia.getTiposDeConsumo();
     Map model = new HashMap();
-    model.put("sectorId",  sectorId);
-    model.put("trayectoId",  trayectoId);
-    model.put("tramoId",  tramoId);
-    model.put("tiposConsumo",  tiposConsumo);
+    model.put("sectorId", sectorId);
+    model.put("trayectoId", trayectoId);
+    model.put("tramoId", tramoId);
+    model.put("tiposConsumo", tiposConsumo);
     model = new SessionValidator().setearPermisosParaTemplate(model, request);
     return new ModelAndView(model, "trayecto/tramo-automovil.html.hbs");
   }

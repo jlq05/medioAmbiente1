@@ -17,13 +17,10 @@ main\Routes.class
 model\ParadaNoExisteException.class
 repositories\RepositorioSectorTerritorial.class
 model\CriterioFormato.class
-repositories\RepositorioOrganizacion.class
 model\TipoPeriodicidad.class
 controllers\OrganizacionController.class
 model\ContrsenaInvalidaException.class
 model\Notificador.class
-controllers\LoginSinRegistrarseController.class
-model\Usuario.class
 model\MedioDeTransporte.class
 controllers\ReportesController.class
 model\PostulanteDto.class
@@ -44,7 +41,6 @@ domain\services\distancia\ServicioDistanciaApiInterface.class
 model\Linea.class
 model\Clasificacion.class
 domain\services\distancia\ServicioDistancia.class
-controllers\RepositorioUsuarios.class
 model\Parada.class
 model\TwilioWhatsApp.class
 repositories\RepositorioUsuarios.class
@@ -58,7 +54,6 @@ model\Bicicleta.class
 controllers\TramoController.class
 controllers\MedicionController.class
 controllers\TrayectoController.class
-controllers\SectoresController.class
 view\TrayectoVista.class
 model\SectorTerritorialComposicion.class
 model\Constantes.class
@@ -69,6 +64,7 @@ model\Miembro.class
 excepciones\UsuarioYaRegistradoException.class
 model\TipoTransportePublico.class
 model\WhatappException.class
+controllers\NotificacionController.class
 excepciones\BusquedaEnBaseDeDatosException.class
 model\TipoConsumo.class
 model\SectorTerritorial.class
@@ -90,6 +86,7 @@ model\Trayecto.class
 controllers\SinAccesoController.class
 model\Pie.class
 model\TipoSectorTerritorial.class
+controllers\ErroresController.class
 model\NotificacionApp.class
 view\TramoVista.class
 enums\Rol.class

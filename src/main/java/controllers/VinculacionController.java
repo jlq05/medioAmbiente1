@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.List;
 import model.Organizacion;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
@@ -28,13 +29,20 @@ public class VinculacionController implements WithGlobalEntityManager, Transacti
   }
 
   public Void buscar(Request request, Response response) {
-    Organizacion organizacion = RepositorioOrganizaciones.instancia
-        .buscarPorNombre(request.queryParams("nombre")).get(0);
 
-    System.out.println(organizacion);
+    Boolean existe = RepositorioOrganizaciones.instancia
+        .existeOrganizacion(request.queryParams("nombre"));
+    System.out.println(existe);
 
-    response.redirect("/home/" + organizacion.getId() + "/sectores/vinculacion");
+    if (existe) {
+      Organizacion organizacion = RepositorioOrganizaciones.instancia
+          .buscarPorNombre(request.queryParams("nombre")).get(0);
 
+      response.redirect("/home/" + organizacion.getId() + "/sectores/vinculacion");
+
+    } else {
+      response.redirect("/home/errores");
+    }
     return null;
   }
 }

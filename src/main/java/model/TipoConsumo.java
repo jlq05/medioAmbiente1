@@ -9,11 +9,11 @@ import javax.persistence.Table;
 @Table(name = "tiposDeConsumo")
 public class TipoConsumo extends PersistentEntity {
   private float factorEmision;
-  @Enumerated(EnumType.ORDINAL)
+  @Enumerated(EnumType.STRING)
   private TipoUnidad tipoUnidad;
   private String tipoDescripcion;
   private String tipoActividad;
-  @Enumerated(EnumType.ORDINAL)
+  @Enumerated(EnumType.STRING)
   private TipoAlcance tipoAlcance;
 
   private TipoConsumo() {
