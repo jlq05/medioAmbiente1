@@ -32,14 +32,14 @@
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/prueba" />
             <property name="hibernate.connection.username" value="root" />
             <property name="hibernate.connection.password" value="mysql" /-->
-			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+			<!--property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
 			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/TpMedioAmbiente"/>
 			<property name="hibernate.connection.username" value="postgres"/>
-			<property name="hibernate.connection.password" value="postgres"/>
-			<!--property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+			<property name="hibernate.connection.password" value="postgres"/-->
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
 			<property name="hibernate.connection.url" value="jdbc:postgresql://ec2-3-209-39-2.compute-1.amazonaws.com/dfi9mm3ig8p9el"/>
 			<property name="hibernate.connection.username" value="pqvdtndqjnxlos"/>
-			<property name="hibernate.connection.password" value="93580c07a8827f9ab3a6e3831a3b9a55e00f6c951f850952057b4ef5658d0447"/-->
+			<property name="hibernate.connection.password" value="93580c07a8827f9ab3a6e3831a3b9a55e00f6c951f850952057b4ef5658d0447"/>
 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
 
