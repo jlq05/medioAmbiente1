@@ -93,32 +93,20 @@ public class MedicionController implements WithGlobalEntityManager, Transactiona
       return new ModelAndView(null, "sinAcceso.html.hbs");
     }
 
-    request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/temp"));
-    String nombreArchivo = request.raw().getPart("archivoParaSubir")
-        .getSubmittedFileName(); //OBTENGO EL NOMBRE DEL ARCHIVO
-    //System.out.println(nombreArchivo);
-    String extension = FilenameUtils
-        .getExtension(nombreArchivo.toUpperCase(Locale.ROOT).trim()); //OBTENGO LA EXTENSION
-    //System.out.println(extension);
+    int tipoConsumoId = Integer.parseInt(request.queryParams("tipoDeConsumo"));
+    TipoConsumo tipoConsumo = RepositorioTipoDeConsumo.instancia.get(tipoConsumoId);
+    float valorDatosActividad = Float.parseFloat(request.queryParams("valorDatosActividad"));
+    TipoPeriodicidad tipoPeriodicidad = request.queryParams("tipoDePeriodicidad").equals("anual")
+        ? TipoPeriodicidad.Anual : TipoPeriodicidad.Mensual;
+    YearMonth periodicidad = YearMonth.of(2022, 6); //TODO: deshardcodearlo
 
-    if (extension.equals(".CSV")) {
-      int tipoConsumoId = Integer.parseInt(request.queryParams("tipoDeConsumo"));
-      TipoConsumo tipoConsumo = RepositorioTipoDeConsumo.instancia.get(tipoConsumoId);
-      float valorDatosActividad = Float.parseFloat(request.queryParams("valorDatosActividad"));
-      TipoPeriodicidad tipoPeriodicidad = request.queryParams("tipoDePeriodicidad").equals("anual")
-          ? TipoPeriodicidad.Anual : TipoPeriodicidad.Mensual;
-      YearMonth periodicidad = YearMonth.of(2022, 6); //TODO: deshardcodearlo
-
-      DatosActividad datosActividad = new DatosActividad(
-          tipoConsumo, valorDatosActividad, tipoPeriodicidad, periodicidad
-      );
-      withTransaction(() -> {
-        RepositorioDatosActividad.instancia.agregar(datosActividad);
-      });
-      response.redirect("/home/medicion");
-    } else {
-      response.redirect("/home/errores");
-    }
+    DatosActividad datosActividad = new DatosActividad(
+        tipoConsumo, valorDatosActividad, tipoPeriodicidad, periodicidad
+    );
+    withTransaction(() -> {
+      RepositorioDatosActividad.instancia.agregar(datosActividad);
+    });
+    response.redirect("/home/medicion");
     return null;
   }
 

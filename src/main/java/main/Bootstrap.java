@@ -198,7 +198,7 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
       ventas2.agregarMiembro(ivan);
       ventas2.agregarPostulante(roberto);
       persist(ventas2);
-      organizacion.agregarSector(ventas);
+      organizacion2.agregarSector(ventas2);
       persist(organizacion2);
 
       //
