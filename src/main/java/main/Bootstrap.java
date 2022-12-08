@@ -183,7 +183,7 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 
       persist(organizacion);
       final Organizacion organizacion2 = new Organizacion(
-          "Gugle",
+          "Apple",
           new Ubicacion(1, "Csstreet", 55),
           TipoOrganizacion.EMPRESA,
           Clasificacion.SECTOR_PRIMARIO,
