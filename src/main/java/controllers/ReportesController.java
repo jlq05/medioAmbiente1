@@ -34,7 +34,7 @@ public class ReportesController implements WithGlobalEntityManager, Transactiona
     }
     Map model = new HashMap();
     model = new SessionValidator().setearPermisosParaTemplate(model, request);
-    return new ModelAndView(model, "reporte//reportes.html.hbs");
+    return new ModelAndView(model, "reporte/reportes.html.hbs");
   }
 
   public ModelAndView getReporteHcPorTipoOrganizacion(Request request, Response response) {
