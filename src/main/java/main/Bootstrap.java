@@ -195,7 +195,6 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 
       // ORGANIZACION DE PRUEBAS
       Sector ventas2 = new Sector("Ventas", new ArrayList<>(), new ArrayList<>());
-      ventas2.agregarMiembro(ivan);
       ventas2.agregarPostulante(roberto);
       persist(ventas2);
       organizacion2.agregarSector(ventas2);
