@@ -74,7 +74,7 @@ public class RepositorioOrganizaciones implements WithGlobalEntityManager {
              Organizacion.class)
         .setParameter("nombre",  "%" + nombre + "%")
         .getResultList();
-    return query.contains(nombre);
+    return query.stream().count() > 0;
   }
 
 
