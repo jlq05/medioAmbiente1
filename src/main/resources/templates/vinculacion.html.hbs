@@ -8,6 +8,7 @@
         <div class="wrapper">
             <header>
                 <div class="section">
+                    <a href="/">Home</a>
                     <div class="header-title">
                         Postularse
                     </div>
@@ -15,10 +16,21 @@
             </header>
             <div class="content">
                 <div class="section">
-                    <form class="search-form" action="/home/vinculacion" method="POST">
-                        <input class="searchbar" name="nombre" placeholder="Escribí el nombre de la organización..."/>
-                        <input class="login-button" type="submit" value="Buscar">
-                    </form>
+                    <div class="org-wrapper">
+                        <p class="org-label">Buscá una organización para vincularte</p>
+                        <form class="search-form" action="/home/vinculacion" method="GET">
+                            <div>
+                                <input class="searchbar" name="nombre" placeholder="Escribí el nombre de la organización..."/>
+
+                                <input class="login-button" type="submit" value="Buscar">
+                            </div>
+                        </form>
+                        <div class="org-container">
+                            {{#each organizaciones}}
+                                <a class="org-link" href="/home/{{id}}/sectores/vinculacion">{{razonSocial}}</a>
+                            {{/each}}
+                        </div>
+                    </div>
                 </div>
             </div>
             <footer>

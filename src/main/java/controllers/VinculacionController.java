@@ -1,6 +1,8 @@
 package controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import model.Organizacion;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
@@ -13,6 +15,7 @@ import utils.SessionValidator;
 public class VinculacionController implements WithGlobalEntityManager, TransactionalOps {
 
   SessionValidator sessionValidator = new SessionValidator();
+  RepositorioOrganizaciones repositorioOrganizaciones = RepositorioOrganizaciones.instancia;
 
   public ModelAndView lectura(Request request, Response response) {
     if (!sessionValidator.estaLogueado(request)) {
@@ -21,7 +24,18 @@ public class VinculacionController implements WithGlobalEntityManager, Transacti
     } else {
       if (sessionValidator.estaLogueado(request)
           && sessionValidator.tienePermisosUsuario(request)) {
-        return new ModelAndView(null, "vinculacion.html.hbs");
+
+        String nombreBuscado = request.queryParams("nombre");
+
+        Map<String, Object> modelo = new HashMap<>();
+
+        List<Organizacion> organizaciones = nombreBuscado != null
+            ? repositorioOrganizaciones.buscarPorNombre(nombreBuscado) :
+            repositorioOrganizaciones.listar();
+
+        modelo.put("organizaciones", organizaciones);
+
+        return new ModelAndView(modelo, "vinculacion.html.hbs");
       } else {
         return new ModelAndView(null, "sinAcceso.html.hbs");
       }
