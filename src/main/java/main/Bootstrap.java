@@ -7,27 +7,8 @@ import java.io.IOException;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
-import model.Clasificacion;
-import model.Linea;
-import model.Miembro;
-import model.Organizacion;
-import model.Parada;
-import model.Persona;
-import model.ProcesadorCsv;
-import model.Sector;
-import model.SectorTerritorial;
-import model.TipoAlcance;
-import model.TipoConsumo;
-import model.TipoDocumento;
-import model.TipoOrganizacion;
-import model.TipoSectorTerritorial;
-import model.TipoTransportePublico;
-import model.TipoUnidad;
-import model.TipoVehiculo;
-import model.Tramo;
-import model.TransportePublico;
-import model.Trayecto;
-import model.Vehiculo;
+
+import model.*;
 import org.uqbarproject.jpa.java8.extras.EntityManagerOps;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
@@ -165,16 +146,21 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
       contaduria.agregarPostulante(pepe);
       persist(ventas);
       persist(contaduria);
-
+      List<Contacto> contactos = new ArrayList<>();
+      contactos.add(
+          new Contacto("Ariel Choque", "5491166854239", "ariel0choque0mamani@gmail.com")
+      );
+      List<Notificador> notificaciones = new ArrayList<>();
+      notificaciones.add(new NotificacionMail());
       Organizacion organizacion = new Organizacion(
           "Gugle",
           new Ubicacion(1, "Csstreet", 55),
           TipoOrganizacion.EMPRESA,
           Clasificacion.SECTOR_PRIMARIO,
           new ArrayList<>(),
+          contactos,
           new ArrayList<>(),
-          new ArrayList<>(),
-          new ArrayList<>()
+          notificaciones
       );
 
       organizacion.agregarSector(ventas);
