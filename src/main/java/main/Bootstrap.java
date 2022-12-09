@@ -7,8 +7,30 @@ import java.io.IOException;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
-
-import model.*;
+import model.Clasificacion;
+import model.Contacto;
+import model.Linea;
+import model.Miembro;
+import model.NotificacionMail;
+import model.Notificador;
+import model.Organizacion;
+import model.Parada;
+import model.Persona;
+import model.ProcesadorCsv;
+import model.Sector;
+import model.SectorTerritorial;
+import model.TipoAlcance;
+import model.TipoConsumo;
+import model.TipoDocumento;
+import model.TipoOrganizacion;
+import model.TipoSectorTerritorial;
+import model.TipoTransportePublico;
+import model.TipoUnidad;
+import model.TipoVehiculo;
+import model.Tramo;
+import model.TransportePublico;
+import model.Trayecto;
+import model.Vehiculo;
 import org.uqbarproject.jpa.java8.extras.EntityManagerOps;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
@@ -143,9 +165,10 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
       Sector contaduria = new Sector("Contaduria", new ArrayList<>(), new ArrayList<>());
       ventas.agregarMiembro(ivan);
       ventas.agregarPostulante(roberto);
-      contaduria.agregarPostulante(pepe);
+      contaduria.agregarMiembro(pepe);
       persist(ventas);
       persist(contaduria);
+
       List<Contacto> contactos = new ArrayList<>();
       contactos.add(
           new Contacto("Ariel Choque", "5491166854239", "ariel0choque0mamani@gmail.com")

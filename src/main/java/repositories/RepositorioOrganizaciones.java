@@ -3,10 +3,11 @@ package repositories;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 import model.Clasificacion;
 import model.Miembro;
+import model.NotificacionMail;
+import model.Notificador;
 import model.Organizacion;
 import model.TipoPeriodicidad;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
@@ -17,9 +18,15 @@ public class RepositorioOrganizaciones implements WithGlobalEntityManager {
   public static final RepositorioOrganizaciones instancia = new RepositorioOrganizaciones();
 
   public List<Organizacion> listar() {
-    return entityManager()
+    List<Organizacion> organizaciones = entityManager()
         .createQuery("from Organizacion", Organizacion.class)
         .getResultList();
+    organizaciones.forEach(organizacion -> {
+      List<Notificador> notificadores = new ArrayList<>();
+      notificadores.add(new NotificacionMail());
+      organizacion.tiposDeNotificacion = notificadores;
+    });
+    return organizaciones;
   }
 
   public List<OrganizacionVista> getOrganizacionesPorClasificacion(
@@ -61,17 +68,17 @@ public class RepositorioOrganizaciones implements WithGlobalEntityManager {
   public List<Organizacion> buscarPorNombre(String nombre) {
 
     return entityManager()
-          .createQuery("from Organizacion c where c.razonSocial like :nombre",
-              Organizacion.class) //
-          .setParameter("nombre", "%" + nombre + "%") //
-          .getResultList();
+        .createQuery("from Organizacion c where c.razonSocial like :nombre",
+            Organizacion.class) //
+        .setParameter("nombre", "%" + nombre + "%") //
+        .getResultList();
   }
 
   public boolean existeOrganizacion(String nombre) {
 
     List<Organizacion> query = entityManager()
-         .createQuery("from Organizacion o where o.razonSocial like :nombre",
-             Organizacion.class)
+        .createQuery("from Organizacion o where o.razonSocial like :nombre",
+            Organizacion.class)
         .setParameter("nombre",  "%" + nombre + "%")
         .getResultList();
     return query.stream().count() > 0;

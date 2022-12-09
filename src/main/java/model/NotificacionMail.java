@@ -18,7 +18,7 @@ public class NotificacionMail implements Notificador {
       props.setProperty("mail.smtp.host", "smtp.gmail.com");
       props.setProperty("mail.smtp.starttls.enable", "true");
       props.setProperty("mail.smtp.port", "587");
-      props.setProperty("mail.smtp.user", "joselqm05@gmail.com");
+      props.setProperty("mail.smtp.user", "diseniodesistemas2022@gmail.com");
       props.setProperty("mail.smtp.auth", "true");
 
       // Preparamos la sesion
@@ -26,7 +26,7 @@ public class NotificacionMail implements Notificador {
 
       // Construimos el mensaje
       MimeMessage message = new MimeMessage(session);
-      message.setFrom(new InternetAddress("joselqm05@gmail.com"));
+      message.setFrom(new InternetAddress("diseniodesistemas2022@gmail.com"));
       message.addRecipient(
           Message.RecipientType.TO,
           new InternetAddress(contacto.getMail()));
@@ -36,7 +36,7 @@ public class NotificacionMail implements Notificador {
 
       // Lo enviamos.
       Transport t = session.getTransport("smtp");
-      t.connect(contacto.getMail(), "la clave");
+      t.connect("diseniodesistemas2022@gmail.com", "asdf1234@");
       t.sendMessage(message, message.getAllRecipients());
 
       // Cierre.
