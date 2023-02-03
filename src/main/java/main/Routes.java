@@ -71,13 +71,12 @@ public class Routes {
     return 8080;
   }
 
-  public static int main(String[] args) {
+  public static void main(String[] args) {
     int puerto = getHerokuAssignedPort();
     Spark.port(puerto);
     System.out.println("Iniciando el servidor...");
     System.out.println(puerto);
     Spark.get("/", (req, res) -> "Hello Heroku World");
-    return 1;
     /*Spark.staticFileLocation("/public");
 
     //System.out.println("Corriendo bootstrap...");
