@@ -76,6 +76,8 @@ public class Routes {
     Spark.port(puerto);
     System.out.println("Iniciando el servidor...");
     System.out.println(puerto);
+    Spark.get("/", (req, res) -> "Hello Heroku World");
+    return;
     Spark.staticFileLocation("/public");
 
     //System.out.println("Corriendo bootstrap...");
