@@ -71,14 +71,14 @@ public class Routes {
     return 8080;
   }
 
-  public static void main(String[] args) {
+  public static int main(String[] args) {
     int puerto = getHerokuAssignedPort();
     Spark.port(puerto);
     System.out.println("Iniciando el servidor...");
     System.out.println(puerto);
     Spark.get("/", (req, res) -> "Hello Heroku World");
-    return;
-    Spark.staticFileLocation("/public");
+    return 1;
+    /*Spark.staticFileLocation("/public");
 
     //System.out.println("Corriendo bootstrap...");
     new Bootstrap().run();
@@ -174,6 +174,6 @@ public class Routes {
 
     Spark.exception(PersistenceException.class, (e, request, response) -> {
       response.redirect("/500");
-    });
+    });*/
   }
 }
