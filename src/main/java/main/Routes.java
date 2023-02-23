@@ -79,7 +79,7 @@ public class Routes {
     Spark.staticFileLocation("/public");
 
     //System.out.println("Corriendo bootstrap...");
-    new Bootstrap().run();
+    //new Bootstrap().run();
 
     DebugScreen.enableDebugScreen();
     HandlebarsTemplateEngine engine = new HandlebarsTemplateEngine();
